@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stbi", "stbi.vcxproj", "{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StbiTest", "..\StbiTest\StbiTest.vcxproj", "{DF2B2012-13C4-4A95-B61E-1F95789A5FA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Debug|Win32.Build.0 = Debug|Win32
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Release|Win32.ActiveCfg = Release|Win32
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Release|Win32.Build.0 = Release|Win32
+		{DF2B2012-13C4-4A95-B61E-1F95789A5FA3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF2B2012-13C4-4A95-B61E-1F95789A5FA3}.Debug|Win32.Build.0 = Debug|Win32
+		{DF2B2012-13C4-4A95-B61E-1F95789A5FA3}.Release|Win32.ActiveCfg = Release|Win32
+		{DF2B2012-13C4-4A95-B61E-1F95789A5FA3}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Asteroids", "Code\Game\Game.vcxproj", "{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{29356192-30A0-41A9-87D2-559A66748ABF} = {29356192-30A0-41A9-87D2-559A66748ABF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB9A0460-6F80-4121-8B28-CD155AFCDC84}"
+	ProjectSection(SolutionItems) = preProject
+		mlshort.Asteroids.pptx = mlshort.Asteroids.pptx
+		ProductVer.h = ProductVer.h
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Code\Engine\Engine.vcxproj", "{29356192-30A0-41A9-87D2-559A66748ABF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}.Debug|Win32.Build.0 = Debug|Win32
+		{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}.Debug|x64.ActiveCfg = Debug|x64
+		{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}.Debug|x64.Build.0 = Debug|x64
+		{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}.Release|Win32.ActiveCfg = Release|Win32
+		{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}.Release|Win32.Build.0 = Release|Win32
+		{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}.Release|x64.ActiveCfg = Release|x64
+		{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}.Release|x64.Build.0 = Release|x64
+		{29356192-30A0-41A9-87D2-559A66748ABF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{29356192-30A0-41A9-87D2-559A66748ABF}.Debug|Win32.Build.0 = Debug|Win32
+		{29356192-30A0-41A9-87D2-559A66748ABF}.Debug|x64.ActiveCfg = Debug|x64
+		{29356192-30A0-41A9-87D2-559A66748ABF}.Debug|x64.Build.0 = Debug|x64
+		{29356192-30A0-41A9-87D2-559A66748ABF}.Release|Win32.ActiveCfg = Release|Win32
+		{29356192-30A0-41A9-87D2-559A66748ABF}.Release|Win32.Build.0 = Release|Win32
+		{29356192-30A0-41A9-87D2-559A66748ABF}.Release|x64.ActiveCfg = Release|x64
+		{29356192-30A0-41A9-87D2-559A66748ABF}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB564233-51A6-47DE-B5E0-DC34C94BE6D6}
+	EndGlobalSection
+EndGlobal
