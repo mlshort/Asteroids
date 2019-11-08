@@ -259,3 +259,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+Lib/EngineD.lib
+Lib/EngineD_x64.lib
