@@ -47,8 +47,8 @@ var NAVTREEINDEX =
 [
 ".html",
 "Keyboard_8h.html#a7c76b4bd0404f77347161e8065e271abaf09564c9ca56850d4cd6b3319e541aee",
-"classCShip.html#a7b81e86e63ee08fb8cff9513e96119bb",
-"structKeyboardState.html#a6fbac575d1e7652a8bf5c1815eefaf09"
+"classCShip.html#a74831efc5447fcad0dcefb629c66e9df",
+"structKeyboardState.html#a6ed26ab9e646bc3a1a8c5607ec7ebccf"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,12 +1,13 @@
 var NAVTREEINDEX2 =
 {
+"classCShip.html#a74831efc5447fcad0dcefb629c66e9df":[2,0,8,0],
 "classCShip.html#a7b81e86e63ee08fb8cff9513e96119bb":[2,0,8,4],
 "classCShip.html#a803628aab3005760e9ccd10c43d7a0f5":[2,0,8,1],
-"classCShip.html#a8dd4e6084a3ff6ac5895d9c61952585c":[2,0,8,6],
 "classCShip.html#aaeb60e11284108adb1a502d4f784fb63":[2,0,8,10],
-"classCShip.html#ab1ebcd5af6d270e05eb006969e50337e":[2,0,8,7],
+"classCShip.html#acae8867daebcfc60f385ecf5f370d2a9":[2,0,8,6],
 "classCShip.html#adad266be410ed343524d933359b5102a":[2,0,8,8],
 "classCShip.html#ae088975c412e35f53d21142db488106e":[2,0,8,5],
+"classCShip.html#aee28e1dc491259937427c46558384411":[2,0,8,7],
 "classCShip.html#af90a909f5940e65ff1da0e26b80c09f9":[2,0,8,11],
 "classCSmallAsteroid.html":[2,0,9],
 "classCSmallAsteroid.html#a845a6bb906a3361685b029dc17bd36a2":[2,0,9,1],
@@ -145,9 +146,9 @@ var NAVTREEINDEX2 =
 "classeng_1_1rdr_1_1CRenderer.html#ac61421945e27580b4577e8853dcf28ff":[2,0,0,1,0,12],
 "classeng_1_1rdr_1_1CRenderer.html#acd65e79bded65611b5cc0e901cedbcbf":[2,0,0,1,0,4],
 "classeng_1_1rdr_1_1CRenderer.html#ace1ad0f41f267a3a161fda726cce0dba":[2,0,0,1,0,13],
+"classeng_1_1rdr_1_1CRenderer.html#adbe2521fecd987161f5ba6182b1bbbd9":[2,0,0,1,0,1],
 "classeng_1_1rdr_1_1CRenderer.html#ae22ae95d804e67715c551ed9d3c4f7ae":[2,0,0,1,0,15],
 "classeng_1_1rdr_1_1CRenderer.html#ae5b6c537a0eab610fc3e9ab688abfd2f":[2,0,0,1,0,19],
-"classeng_1_1rdr_1_1CRenderer.html#ae7edbf08b00557e84c1bec6cf4c1f004":[2,0,0,1,0,1],
 "classeng_1_1rdr_1_1CRenderer.html#aedcb745fc0785ffeb073362ac99d4d02":[2,0,0,1,0,16],
 "classeng_1_1rdr_1_1CRenderer.html#aee934a8e85ba6c1bf11ec2569bd50d8b":[2,0,0,1,0,11],
 "classeng_1_1rdr_1_1CTexture.html":[2,0,0,1,1],
@@ -172,8 +173,8 @@ var NAVTREEINDEX2 =
 "functions_vars.html":[2,3,2],
 "hierarchy.html":[2,2],
 "index.html":[],
-"namespaceeng.html":[1,0,0],
 "namespaceeng.html":[2,0,0],
+"namespaceeng.html":[1,0,0],
 "namespaces.html":[1,0],
 "pages.html":[],
 "resource_8h_source.html":[3,0,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "structKeyboardState.html#a66375a5d57fe0a5cca488f74527e8aa3":[2,0,12,148],
 "structKeyboardState.html#a671ede7bb8bf2e7f09214db63fa611f6":[2,0,12,111],
 "structKeyboardState.html#a696804890a7dd5bd55f4d85ba3e9a891":[2,0,12,113],
-"structKeyboardState.html#a6a8ed436e12814857f2ad226c971fa16":[2,0,12,106],
-"structKeyboardState.html#a6ed26ab9e646bc3a1a8c5607ec7ebccf":[2,0,12,132]
+"structKeyboardState.html#a6a8ed436e12814857f2ad226c971fa16":[2,0,12,106]
 };
