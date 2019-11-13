@@ -41,8 +41,8 @@ public:
     { return m_degOrientation; };
 
 // IRenderable  
-    virtual void       Render         ( void ) const;
-    virtual void       Update         ( float fDeltaTime );
+    void              Render         ( void ) const override;
+    void              Update         ( float fDeltaTime ) override;
 
 private:
     void               ThrustForward  ( float fDeltaTime, float fThrust ) noexcept;

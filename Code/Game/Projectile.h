@@ -43,8 +43,8 @@ public:
 
 
 // IRenderable 
-    virtual void Render       ( void ) const;
-    virtual void Update       ( float fDeltaTime );
+    void Render       ( void ) const override;
+    void Update       ( float fDeltaTime ) override;
 
 private:
     void         Move         ( float fDeltaTime ) noexcept;

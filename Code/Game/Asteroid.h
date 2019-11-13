@@ -45,9 +45,6 @@ public:
     /// Conversion Constructor
     explicit CAsteroid(ASTEROID_TYPE type, const eng::math::CVector2f& vCenter, float fRadius, 
                        const eng::math::CVector2f& vVel, float fAngularVelocity = 0.0) noexcept;
-    /// Conversion Constructor
-//    explicit CAsteroid(ASTEROID_TYPE type, float fCenterX, float fCenterY, float fRadius, 
-//                       float fDeltaX, float fDeltaY, float fAngularVelocity = 0.0) noexcept;
     /// Default Destructor
     virtual ~CAsteroid() noexcept;
 
