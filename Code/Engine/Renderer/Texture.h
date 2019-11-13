@@ -44,7 +44,7 @@ class CTexture
 
 public:
     constexpr CTexture() noexcept;
-    ~CTexture();
+    ~CTexture() = default;
 
     bool                   Init              (const char* szImageFilePath);
     constexpr unsigned int get_TextureID     (void) const noexcept;

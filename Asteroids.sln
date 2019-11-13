@@ -6,16 +6,19 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Asteroids", "Code\Game\Game.vcxproj", "{D6F4F658-2270-4EE9-A1FE-7E1EA505218E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{29356192-30A0-41A9-87D2-559A66748ABF} = {29356192-30A0-41A9-87D2-559A66748ABF}
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B} = {A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB9A0460-6F80-4121-8B28-CD155AFCDC84}"
 	ProjectSection(SolutionItems) = preProject
-		mlshort.Asteroids.pptx = mlshort.Asteroids.pptx
+		Documentation\mlshort.Asteroids.pptx = Documentation\mlshort.Asteroids.pptx
 		ProductVer.h = ProductVer.h
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Code\Engine\Engine.vcxproj", "{29356192-30A0-41A9-87D2-559A66748ABF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stbi", "Third Party\stbi\stbi.vcxproj", "{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +44,12 @@ Global
 		{29356192-30A0-41A9-87D2-559A66748ABF}.Release|Win32.Build.0 = Release|Win32
 		{29356192-30A0-41A9-87D2-559A66748ABF}.Release|x64.ActiveCfg = Release|x64
 		{29356192-30A0-41A9-87D2-559A66748ABF}.Release|x64.Build.0 = Release|x64
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Debug|Win32.Build.0 = Debug|Win32
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Debug|x64.ActiveCfg = Debug|Win32
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Release|Win32.ActiveCfg = Release|Win32
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Release|Win32.Build.0 = Release|Win32
+		{A80CD2D4-A6E7-448C-AB5E-4CBB458F3C6B}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,7 @@
+<map id="Keyboard.h" name="Keyboard.h">
+<area shape="rect" id="node1" title="CKeyboard class interface." alt="" coords="135,5,223,32"/>
+<area shape="rect" id="node2" href="$Application_8h.html" title="CApplication class interface." alt="" coords="69,80,167,107"/>
+<area shape="rect" id="node5" href="$Keyboard_8cpp.html" title="CKeyboard class implementation." alt="" coords="191,80,293,107"/>
+<area shape="rect" id="node3" href="$Application_8cpp.html" title="CApplication class implementation." alt="" coords="5,155,116,181"/>
+<area shape="rect" id="node4" href="$Ship_8cpp.html" title="CShip class implementation." alt="" coords="140,155,213,181"/>
+</map>

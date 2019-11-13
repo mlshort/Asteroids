@@ -72,30 +72,11 @@ struct TVector2
           Y( o.Y )
     { };
 
-    /// move constructor
-    /// @TODO - is this really necessary?
-    constexpr TVector2( TVector2<_Ty>&& o ) noexcept
-        : X( o.X ),
-          Y( o.Y )
-    { };
-
     /// Default destructor
     ~TVector2() = default;
 
     /// Assignment operator
     inline TVector2<_Ty>& operator= ( const TVector2<_Ty>& rhs ) noexcept
-    {
-        if (this != &rhs)
-        {
-            X = rhs.X;
-            Y = rhs.Y;
-        }
-        return *this;
-    };
-
-    /// move assignment operator
-    /// @TODO - is this really necessary?
-    inline TVector2<_Ty>& operator= ( TVector2<_Ty>&& rhs ) noexcept
     {
         if (this != &rhs)
         {
@@ -493,7 +474,9 @@ struct TVector2
  * @brief creates a 2d vector given a direction and magnitude 
  *        with additional sanity checking for initial values
  *
- * @
+ * @param [in] nMagnitude    magnitude
+ * @param [in] degDir        direction in degrees
+ *
  * @retval TVector2<_Ty>   the created vector
  */
 template <typename _Ty,

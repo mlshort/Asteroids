@@ -43,74 +43,74 @@ public:
 
     float CalcThumbR_Magnitude (void) const noexcept;
 
-    inline bool IsConnected(void) const noexcept
+    constexpr bool IsConnected(void) const noexcept
     { return m_bConnected; };
 
-    inline const XINPUT_STATE& get_State(void) const noexcept
+    constexpr const XINPUT_STATE& get_State(void) const noexcept
     { return m_stInput; };
 
-    inline bool get_DPadUp(void) const noexcept
+    constexpr bool get_DPadUp(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_UP) != 0; };
 
-    inline bool get_DPadDown(void) const noexcept
+    constexpr bool get_DPadDown(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_DOWN) != 0; };
 
-    inline bool get_DPadLeft(void) const noexcept
+    constexpr bool get_DPadLeft(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_LEFT) != 0; };
     
-    inline bool get_DPadRight(void) const noexcept
+    constexpr bool get_DPadRight(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_DPAD_RIGHT) != 0; };
     
-    inline bool get_Start(void) const noexcept
+    constexpr bool get_Start(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_START) != 0; };
 
-    inline bool get_Back(void) const noexcept
+    constexpr bool get_Back(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_BACK) != 0; };
 
-    inline bool get_LeftThumb(void) const noexcept
+    constexpr bool get_LeftThumb(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_LEFT_THUMB) != 0; };
 
-    inline bool get_RightThumb(void) const noexcept
+    constexpr bool get_RightThumb(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_RIGHT_THUMB) != 0; };
 
-    inline bool get_LeftShoulder(void) const noexcept
+    constexpr bool get_LeftShoulder(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_LEFT_SHOULDER) != 0; };
 
-    inline bool get_RightShoulder(void) const noexcept
+    constexpr bool get_RightShoulder(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_RIGHT_SHOULDER) != 0; };
 
 /**
    @todo the rest of the button accessors need the following implementation
  */
-    inline bool get_A(void) const noexcept
+    constexpr bool get_A(void) const noexcept
     { return (((m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_A) != 0) &&
               ((m_stLast.Gamepad.wButtons & XINPUT_GAMEPAD_A) == 0) ); };
 
-    inline bool get_B(void) const noexcept
+    constexpr bool get_B(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_B) != 0; };
 
-    inline bool get_X(void) const noexcept
+    constexpr bool get_X(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_X) != 0; };
 
-    inline bool get_Y(void) const noexcept
+    constexpr bool get_Y(void) const noexcept
     { return (m_stInput.Gamepad.wButtons & XINPUT_GAMEPAD_Y) != 0; };
 
-    inline BYTE get_LeftTrigger(void) const noexcept
+    constexpr BYTE get_LeftTrigger(void) const noexcept
     { return m_stInput.Gamepad.bLeftTrigger; };
 
-    inline BYTE get_RightTrigger(void) const noexcept
+    constexpr BYTE get_RightTrigger(void) const noexcept
     { return m_stInput.Gamepad.bRightTrigger; };
 
-    inline SHORT get_ThumbLX(void) const noexcept
+    constexpr SHORT get_ThumbLX(void) const noexcept
     { return m_stInput.Gamepad.sThumbLX; };
 
-    inline SHORT get_ThumbLY(void) const noexcept
+    constexpr SHORT get_ThumbLY(void) const noexcept
     { return m_stInput.Gamepad.sThumbLY; };
 
-    inline SHORT get_ThumbRX(void) const noexcept
+    constexpr SHORT get_ThumbRX(void) const noexcept
     { return m_stInput.Gamepad.sThumbRX; };
 
-    inline SHORT get_ThumbRY(void) const noexcept
+    constexpr SHORT get_ThumbRY(void) const noexcept
     { return m_stInput.Gamepad.sThumbRY; };
 
 

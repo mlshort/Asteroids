@@ -1,0 +1,6 @@
+<map id="CSmallAsteroid" name="CSmallAsteroid">
+<area shape="rect" id="node1" title=" " alt="" coords="9,229,121,256"/>
+<area shape="rect" id="node2" href="$classCAsteroid.html" title=" " alt="" coords="25,155,104,181"/>
+<area shape="rect" id="node3" href="$classeng_1_1CActor2.html" title=" " alt="" coords="15,80,114,107"/>
+<area shape="rect" id="node4" href="$classeng_1_1IRenderable.html" title=" " alt="" coords="5,5,124,32"/>
+</map>

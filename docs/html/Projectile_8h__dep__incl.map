@@ -1,0 +1,5 @@
+<map id="Projectile.h" name="Projectile.h">
+<area shape="rect" id="node1" title="CProjectile class interface." alt="" coords="61,5,147,32"/>
+<area shape="rect" id="node2" href="$Game_8cpp.html" title="CApplication class implementation." alt="" coords="5,80,88,107"/>
+<area shape="rect" id="node3" href="$Projectile_8cpp.html" title="CProjectile class implementation." alt="" coords="112,80,213,107"/>
+</map>

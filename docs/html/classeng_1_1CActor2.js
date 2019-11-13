@@ -1,0 +1,27 @@
+var classeng_1_1CActor2 =
+[
+    [ "CActor2", "classeng_1_1CActor2.html#a15b1ab48ce3fab088f5ee24f6dcba415", null ],
+    [ "CActor2", "classeng_1_1CActor2.html#ade024052239a567b93cf886179e2b758", null ],
+    [ "CActor2", "classeng_1_1CActor2.html#a55297552f7e4ecf7877530c873002c55", null ],
+    [ "CActor2", "classeng_1_1CActor2.html#ab222d28d480e5a745156ed1740c4b99d", null ],
+    [ "~CActor2", "classeng_1_1CActor2.html#a9aeb376f51c8bc045577f506c45c0f80", null ],
+    [ "set_Center", "classeng_1_1CActor2.html#aa7462e89e5ac9dbf36282cc15d20d01f", null ],
+    [ "get_Center", "classeng_1_1CActor2.html#a9e6690f8e0150c289fc3f314e5e1a248", null ],
+    [ "incr_Center", "classeng_1_1CActor2.html#af92988c7b279c2fee2fc23640b3e0bb0", null ],
+    [ "set_CenterX", "classeng_1_1CActor2.html#aed65bf97654bc4c55636304744e88472", null ],
+    [ "get_CenterX", "classeng_1_1CActor2.html#a759fb2d9d58e43b78560ca02b7553fae", null ],
+    [ "set_CenterY", "classeng_1_1CActor2.html#add3c5139e52fc25c8a3b635006c05b23", null ],
+    [ "get_CenterY", "classeng_1_1CActor2.html#ad981d002193cde5a79084711b0af3ea3", null ],
+    [ "set_Velocity", "classeng_1_1CActor2.html#a74159b894da33cc8bb1a0257c9b87b80", null ],
+    [ "get_Velocity", "classeng_1_1CActor2.html#a4c5d45819058702409715aacccab2915", null ],
+    [ "incr_Velocity", "classeng_1_1CActor2.html#abce0a371ef7e7b9413519d716efb9702", null ],
+    [ "set_Radius", "classeng_1_1CActor2.html#aa29fcd096d76a44a67ede9be97687f0a", null ],
+    [ "get_Radius", "classeng_1_1CActor2.html#a73c1d2491a2b6ece9c2c785d4f606978", null ],
+    [ "set_Active", "classeng_1_1CActor2.html#a25573ddeb10b6797475dbc4b6f541b4a", null ],
+    [ "IsActive", "classeng_1_1CActor2.html#a23640394edfbeeebd1578f32da5e53f9", null ],
+    [ "IntersectsWith", "classeng_1_1CActor2.html#a96f209c1e6f845c75fed9070151ec1e3", null ],
+    [ "m_bActive", "classeng_1_1CActor2.html#a696b0f1d5a0850cad725462462ce3607", null ],
+    [ "m_vCenter", "classeng_1_1CActor2.html#a4704e70925c27f95fb535508e09f2510", null ],
+    [ "m_vVelocity", "classeng_1_1CActor2.html#a97b78959a9c804d761f75284c9c081aa", null ],
+    [ "m_fRadius", "classeng_1_1CActor2.html#ab43215671671b01b61104ef2f9847b17", null ]
+];

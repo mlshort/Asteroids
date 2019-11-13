@@ -55,7 +55,9 @@ class CRenderer
 {
 public:
     /// Default Constructor
-    CRenderer() noexcept;
+    constexpr CRenderer() noexcept
+    { };
+
     /// Default Destructor
     ~CRenderer() noexcept;
 

@@ -1,0 +1,5 @@
+<map id="CSoundManager::LoadAndCreateInstance" name="CSoundManager::LoadAndCreateInstance">
+<area shape="rect" id="node1" title=" " alt="" coords="5,23,220,65"/>
+<area shape="rect" id="node2" href="$classCSoundManager.html#a6a820cbe52014f7c3e3e7ddc042496bf" title="Create sound instances." alt="" coords="268,5,488,32"/>
+<area shape="rect" id="node3" href="$classCSoundManager.html#a5bfc75141969d89f7d426fe9eeefa2b2" title="Load sound from file." alt="" coords="301,56,455,83"/>
+</map>

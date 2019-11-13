@@ -1,0 +1,10 @@
+<map id="eng::CActor2" name="eng::CActor2">
+<area shape="rect" id="node1" title=" " alt="" coords="261,80,359,107"/>
+<area shape="rect" id="node3" href="$classCAsteroid.html" title=" " alt="" coords="164,155,243,181"/>
+<area shape="rect" id="node7" href="$classCProjectile.html" title=" " alt="" coords="267,155,353,181"/>
+<area shape="rect" id="node8" href="$classCShip.html" title=" " alt="" coords="377,155,435,181"/>
+<area shape="rect" id="node2" href="$classeng_1_1IRenderable.html" title=" " alt="" coords="251,5,369,32"/>
+<area shape="rect" id="node4" href="$classCLargeAsteroid.html" title=" " alt="" coords="5,229,116,256"/>
+<area shape="rect" id="node5" href="$classCMediumAsteroid.html" title=" " alt="" coords="141,229,266,256"/>
+<area shape="rect" id="node6" href="$classCSmallAsteroid.html" title=" " alt="" coords="290,229,402,256"/>
+</map>

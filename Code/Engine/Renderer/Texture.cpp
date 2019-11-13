@@ -35,11 +35,6 @@ constexpr CTexture::CTexture() noexcept
 };
 
 //---------------------------------------------------------------------------
-CTexture::~CTexture()
-{
-}
-
-//---------------------------------------------------------------------------
 bool CTexture::Init(const char* szImageFilePath)
 {
     bool bReturn = false;

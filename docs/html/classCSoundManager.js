@@ -1,0 +1,25 @@
+var classCSoundManager =
+[
+    [ "CSoundManager", "classCSoundManager.html#ae8358c75282bcceb23bd23ea9328e407", null ],
+    [ "~CSoundManager", "classCSoundManager.html#a75bc0ad3cc339baeb29372632c02f5f2", null ],
+    [ "CreateInstances", "classCSoundManager.html#a6a820cbe52014f7c3e3e7ddc042496bf", null ],
+    [ "Load", "classCSoundManager.html#a5bfc75141969d89f7d426fe9eeefa2b2", null ],
+    [ "GetNextInstance", "classCSoundManager.html#a16437947036565bd281129a6636e7795", null ],
+    [ "InitSounds", "classCSoundManager.html#a6ebf6772a7f9df669d475b28fc16f0cc", null ],
+    [ "LoadAndCreateInstance", "classCSoundManager.html#aded90f0a02b66ac8ebfdf9420399310d", null ],
+    [ "IsAudioDevicePresent", "classCSoundManager.html#a13bedcef84ceaeed1416ef611bbaa666", null ],
+    [ "Update", "classCSoundManager.html#ac47d6e016212bc4005339e480ef17d8c", null ],
+    [ "Play", "classCSoundManager.html#a8bd82c737999f185b1d23b0aaa3d4320", null ],
+    [ "Loop", "classCSoundManager.html#ade61d845974eacdf83f9a91714c12598", null ],
+    [ "Stop", "classCSoundManager.html#a0c20299e8c87f8547fddcea478c7be08", null ],
+    [ "SetPitch", "classCSoundManager.html#a5b853909994b1b6e60fc89e19d3c4d89", null ],
+    [ "SetVolume", "classCSoundManager.html#a116f4a3f8ab6d09208ed7df8e50e52ff", null ],
+    [ "m_pAudioEngine", "classCSoundManager.html#a3d7bd70de82bc05fb09cf1627e6d05ec", null ],
+    [ "m_pSoundEffects", "classCSoundManager.html#a6dc5405ed308f19e18e9d81de35d1234", null ],
+    [ "m_pInstance", "classCSoundManager.html#a6c9c6a69c248c916b9fa08c20dbdf932", null ],
+    [ "m_rgInstanceCount", "classCSoundManager.html#a0d7a903615804bcc89ac3640893eb63d", null ],
+    [ "m_nCount", "classCSoundManager.html#aba40f47e2331de9e7f65eb3ce512bf49", null ],
+    [ "m_nMaxSounds", "classCSoundManager.html#a8dfc664580b7427cf36531081428db41", null ],
+    [ "m_nLastPlayedSound", "classCSoundManager.html#ac9e33e4591af6c379014b377c4342ce8", null ],
+    [ "m_nLastPlayedInstance", "classCSoundManager.html#aeba9925dcd84fa0357a32c4d79a7ab82", null ]
+];

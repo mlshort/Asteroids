@@ -1,0 +1,17 @@
+<map id="targetver.h" name="targetver.h">
+<area shape="rect" id="node1" title="Windows OS platform header file." alt="" coords="1551,5,1634,32"/>
+<area shape="rect" id="node2" href="$Actor2_8cpp.html" title="CActor2 class implementation." alt="" coords="5,80,204,136"/>
+<area shape="rect" id="node3" href="$Random_8cpp.html" title="CRandom class implementation." alt="" coords="229,80,439,136"/>
+<area shape="rect" id="node4" href="$AABB2_8cpp.html" title="CAABB2 class implementation." alt="" coords="464,80,692,136"/>
+<area shape="rect" id="node5" href="$Renderer_8cpp.html" title="CRenderer class implementation." alt="" coords="717,80,954,136"/>
+<area shape="rect" id="node6" href="$Texture_8cpp.html" title="CTexture class implementation." alt="" coords="979,80,1207,136"/>
+<area shape="rect" id="node7" href="$TimeUtils_8cpp.html" title="A simple high&#45;precision time utility function for Windows." alt="" coords="1231,80,1451,136"/>
+<area shape="rect" id="node8" href="$Application_8cpp.html" title="CApplication class implementation." alt="" coords="1475,95,1585,121"/>
+<area shape="rect" id="node9" href="$Asteroid_8cpp.html" title="CAsteroid class implementation." alt="" coords="1609,95,1704,121"/>
+<area shape="rect" id="node10" href="$Game_8cpp.html" title="CApplication class implementation." alt="" coords="1729,95,1811,121"/>
+<area shape="rect" id="node11" href="$Keyboard_8cpp.html" title="CKeyboard class implementation." alt="" coords="1836,95,1939,121"/>
+<area shape="rect" id="node12" href="$Projectile_8cpp.html" title="CProjectile class implementation." alt="" coords="1963,95,2065,121"/>
+<area shape="rect" id="node13" href="$Ship_8cpp.html" title="CShip class implementation." alt="" coords="2089,95,2163,121"/>
+<area shape="rect" id="node14" href="$SoundManager_8cpp.html" title="CSoundManager class implementation." alt="" coords="2187,95,2321,121"/>
+<area shape="rect" id="node15" href="$XboxController_8cpp.html" title="CXboxController class implementation." alt="" coords="2346,95,2477,121"/>
+</map>

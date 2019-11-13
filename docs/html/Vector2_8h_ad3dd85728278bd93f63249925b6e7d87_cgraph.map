@@ -1,0 +1,3 @@
+<map id="eng::math::CreateVector2" name="eng::math::CreateVector2">
+<area shape="rect" id="node1" title="creates a 2d vector given a direction and magnitude with additional sanity checking for initial value..." alt="" coords="5,29,176,56"/>
+</map>

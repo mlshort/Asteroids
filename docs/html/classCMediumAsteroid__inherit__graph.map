@@ -1,0 +1,6 @@
+<map id="CMediumAsteroid" name="CMediumAsteroid">
+<area shape="rect" id="node1" title=" " alt="" coords="5,229,131,256"/>
+<area shape="rect" id="node2" href="$classCAsteroid.html" title=" " alt="" coords="29,155,107,181"/>
+<area shape="rect" id="node3" href="$classeng_1_1CActor2.html" title=" " alt="" coords="19,80,117,107"/>
+<area shape="rect" id="node4" href="$classeng_1_1IRenderable.html" title=" " alt="" coords="9,5,127,32"/>
+</map>

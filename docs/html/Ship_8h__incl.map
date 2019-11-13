@@ -1,0 +1,11 @@
+<map id="Ship.h" name="Ship.h">
+<area shape="rect" id="node1" title="CShip class interface." alt="" coords="159,5,217,32"/>
+<area shape="rect" id="node2" href="$Actor2_8h.html" title="CActor2 class interface." alt="" coords="115,80,261,107"/>
+<area shape="rect" id="node3" href="$IRenderable_8h.html" title="IRenderable abstract base class interface." alt="" coords="5,155,181,181"/>
+<area shape="rect" id="node4" href="$Vector2_8h.html" title="TVector2 template class implementation." alt="" coords="205,155,360,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="187,229,269,256"/>
+<area shape="rect" id="node6" href="$MathUtils_8h.html" title="Math utility method declarations." alt="" coords="293,229,381,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="223,304,283,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="308,304,367,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="391,304,465,331"/>
+</map>

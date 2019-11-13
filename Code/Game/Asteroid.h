@@ -70,8 +70,8 @@ public:
     void           InitIrregularAsteroid(size_t nNumVertices) noexcept;
 
 // IRenderable 
-    virtual void   Render               (void) const;
-    virtual void   Update               (float fDeltaTime);
+    void   Render               (void) const override;
+    void   Update               (float fDeltaTime) override;
 
 private:
     size_t         AddVertex            (const eng::math::CVector2f& vNewVertex) noexcept;

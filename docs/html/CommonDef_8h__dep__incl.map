@@ -1,0 +1,9 @@
+<map id="CommonDef.h" name="CommonDef.h">
+<area shape="rect" id="node1" title="Application Common Definitions." alt="" coords="306,5,410,32"/>
+<area shape="rect" id="node2" href="$Application_8cpp.html" title="CApplication class implementation." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$Asteroid_8cpp.html" title="CAsteroid class implementation." alt="" coords="140,80,235,107"/>
+<area shape="rect" id="node4" href="$Game_8cpp.html" title="CApplication class implementation." alt="" coords="259,80,342,107"/>
+<area shape="rect" id="node5" href="$Projectile_8cpp.html" title="CProjectile class implementation." alt="" coords="366,80,467,107"/>
+<area shape="rect" id="node6" href="$Ship_8cpp.html" title="CShip class implementation." alt="" coords="492,80,565,107"/>
+<area shape="rect" id="node7" href="$SoundManager_8cpp.html" title="CSoundManager class implementation." alt="" coords="589,80,724,107"/>
+</map>

@@ -10,7 +10,7 @@ Directory Structure
         |
         +-- Readme.md (this file)
         |
-        +-- mlshort.FinalProject.Asteroids.pptx (project presentation)
+        +-- Documentation (mlshort.Asteroids.pptx (project presentation))
         |
         +-- Bin (Asteroids[_x64][D].exe)
         |   |
@@ -50,6 +50,7 @@ Directory Structure
             |
             +-- stbi (Solution File) (Project File) (stbi Source Code)
 
+Doxygen Generated Documentation
 
 Project Enhancements
 --------------------
