@@ -59,7 +59,7 @@ public:
     { };
 
     /// Default Destructor
-    ~CRenderer() noexcept;
+    ~CRenderer() = default;
 
     void Initialize      ( void );
 

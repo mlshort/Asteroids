@@ -19,6 +19,7 @@
 
 #pragma comment( lib, "opengl32" ) // Link in the OpenGL32.lib static library
 
+
 namespace eng
 {
 namespace rdr
@@ -26,17 +27,14 @@ namespace rdr
 
 using  namespace eng::math;
 
-//-----------------------------------------------------------------------------------------------
-CRenderer::~CRenderer() noexcept
-{
-};
+constexpr float g_fDefaultLineWidth = 2.f;
 
 //-----------------------------------------------------------------------------------------------
 void CRenderer::Initialize(void)
 {
     glEnable( GL_BLEND );
     glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
-    glLineWidth( 2.f );
+    glLineWidth( g_fDefaultLineWidth );
     glEnable( GL_LINE_SMOOTH );
 };
 

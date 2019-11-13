@@ -53,8 +53,5 @@ constexpr CAABB2::CAABB2(const math::CVector2i& vMin, int iWidth, int iHeight) n
 {
 };
 
-CAABB2::~CAABB2() noexcept
-{
-};
 
 }

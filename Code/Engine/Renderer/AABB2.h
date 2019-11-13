@@ -19,7 +19,13 @@
 
 namespace eng
 {
-
+/**
+ * @brief Axially-Aligned Bounding Box
+ *
+ * Axially allgned bounding boxes have the restriction that
+ * their sides be perpendicular to primary axes of the coordinate
+ * system
+ */
 class CAABB2
 {
     math::CVector2f m_vMin;
@@ -38,10 +44,27 @@ public:
     /// Conversion constructor
     explicit constexpr CAABB2(const math::CVector2i& vMin, int iWidth, int iHeight) noexcept;
     /// Default destructor
-    ~CAABB2() noexcept;
+    ~CAABB2() = default;
 
+/**
+ *  @brief get AABB min point
+ *
+ *  @retval CVector2f containing the min point
+ */
     constexpr const math::CVector2f& get_Min   (void) const noexcept;
+
+/**
+ *  @brief get AABB max point
+ *
+ *  @retval CVector2f containing the max point
+ */
     constexpr const math::CVector2f& get_Max   (void) const noexcept;
+ 
+ /**
+  * brief calculates AABB center pointer
+  *
+  * @retval CVector2f containing the center point
+  */
     constexpr math::CVector2f        CalcCenter(void) const noexcept;
 };
 

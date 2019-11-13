@@ -40,7 +40,7 @@ class CTexture
     static std::map< std::string, CTexture*> s_mapRegistry;
     unsigned int                             m_nOpenGLTextureID; ///< Holds the ID of the texture object
     math::CVector2i                          m_vTexelSize;
-    int                                      m_iComponents;       ///< RGBA Components
+    int                                      m_iComponents;      ///< RGBA Components
 
 public:
     constexpr CTexture() noexcept;
