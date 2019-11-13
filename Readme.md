@@ -50,7 +50,8 @@ Directory Structure
             |
             +-- stbi (Solution File) (Project File) (stbi Source Code)
 
-Doxygen Generated Documentation
+[Doxygen Generated Documentation](https://mlshort.github.io/Asteroids/)
+--------------------
 
 Project Enhancements
 --------------------
