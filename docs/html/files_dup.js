@@ -9,7 +9,6 @@ var files_dup =
     [ "Asteroid.h", "Asteroid_8h.html", "Asteroid_8h" ],
     [ "AsteroidsVersion.h", "AsteroidsVersion_8h.html", "AsteroidsVersion_8h" ],
     [ "CommonDef.h", "CommonDef_8h.html", "CommonDef_8h" ],
-    [ "constants.h", "constants_8h_source.html", null ],
     [ "Game.cpp", "Game_8cpp.html", "Game_8cpp" ],
     [ "Game.h", "Game_8h.html", "Game_8h" ],
     [ "Keyboard.cpp", "Keyboard_8cpp.html", "Keyboard_8cpp" ],
@@ -22,5 +21,5 @@ var files_dup =
     [ "SoundManager.cpp", "SoundManager_8cpp.html", "SoundManager_8cpp" ],
     [ "SoundManager.h", "SoundManager_8h.html", "SoundManager_8h" ],
     [ "XboxController.cpp", "XboxController_8cpp.html", "XboxController_8cpp" ],
-    [ "XboxController.h", "XboxController_8h_source.html", null ]
+    [ "XboxController.h", "XboxController_8h.html", "XboxController_8h" ]
 ];

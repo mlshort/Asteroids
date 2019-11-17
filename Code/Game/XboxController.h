@@ -1,10 +1,9 @@
 /**
- *  @file       XBoxController.h
- *  @brief      CXBoxController class interface
+ *  @file       XboxController.h
+ *  @brief      CXboxController class interface
  *
  *  @author     Mark L. Short
  *  @date       May 7, 2017
- *
  *
  */
 
@@ -115,8 +114,8 @@ public:
 };
 
 constexpr CXboxController::CXboxController(DWORD dwController /* = 0 */,
-    WORD wLeftThumbDZ,
-    WORD wRightThumbDZ) noexcept
+                                           WORD wLeftThumbDZ,
+                                           WORD wRightThumbDZ) noexcept
     : m_dwController(dwController),
       m_dwResult(0),
       m_wLeftThumbDeadZone(wLeftThumbDZ),

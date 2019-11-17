@@ -23,7 +23,7 @@
 <area shape="rect" id="node17" title=" " alt="" coords="231,229,286,256"/>
 <area shape="rect" id="node21" title=" " alt="" coords="915,155,978,181"/>
 <area shape="rect" id="node23" href="$Keyboard_8h.html" title="CKeyboard class interface." alt="" coords="1143,155,1231,181"/>
-<area shape="rect" id="node24" href="$XboxController_8h_source.html" title=" " alt="" coords="1002,155,1118,181"/>
+<area shape="rect" id="node24" href="$XboxController_8h.html" title="CXboxController class interface." alt="" coords="1002,155,1118,181"/>
 <area shape="rect" id="node25" title=" " alt="" coords="1026,229,1094,256"/>
 <area shape="rect" id="node27" href="$Actor2_8h.html" title="CActor2 class interface." alt="" coords="616,155,763,181"/>
 <area shape="rect" id="node28" href="$IRenderable_8h.html" title="IRenderable abstract base class interface." alt="" coords="583,229,759,256"/>
