@@ -61,40 +61,40 @@ public:
     /// Default Destructor
     ~CRenderer() = default;
 
-    void Initialize      ( void );
+    void Initialize      ( void ) noexcept;
 
-    void ClearColorBuffer( void );
+    void ClearColorBuffer( void ) noexcept;
 
-    void SetOrtho        ( const math::CVector2f& vBottomLeft, const math::CVector2f& vTopRight );
-    void SetLineWidth    ( float fLineWidth );
-    void SetPointSize    ( float fPointSize );
-    void SetColor        ( const ColorRGBA& clr );
-    void SetClearColor   ( const ColorRGBA& clr );
+    void SetOrtho        ( const math::CVector2f& vBottomLeft, const math::CVector2f& vTopRight ) noexcept;
+    void SetLineWidth    ( float fLineWidth ) noexcept;
+    void SetPointSize    ( float fPointSize ) noexcept;
+    void SetColor        ( const ColorRGBA& clr ) noexcept;
+    void SetClearColor   ( const ColorRGBA& clr ) noexcept;
 
-    void TranslateView   ( const math::CVector2f& vTranslate );
-    void RotateView      ( float fDegrees );
+    void TranslateView   ( const math::CVector2f& vTranslate ) noexcept;
+    void RotateView      ( float fDegrees ) noexcept;
 
-    void ScaleView       ( float fUniformScale );
-    void PushView        ( void );
-    void PopView         ( void );
+    void ScaleView       ( float fUniformScale ) noexcept;
+    void PushView        ( void ) noexcept;
+    void PopView         ( void ) noexcept;
 
-    void SetViewPort     ( int iX, int iY, int iWidth, int iHeight );
+    void SetViewPort     ( int iX, int iY, int iWidth, int iHeight ) noexcept;
 
-    void DrawPoint       ( const math::CVector2f& vCenter, const ColorRGBA& clr, float fPointSize );
+    void DrawPoint       ( const math::CVector2f& vCenter, const ColorRGBA& clr, float fPointSize ) noexcept;
 
-    void DrawLine        ( const math::CVector2f& vStart, const math::CVector2f& vEnd );
-    void DrawLine        ( const math::CVector2f& vStart, const math::CVector2f& vEnd, const ColorRGBA& clr, float fLineWidth = 1.f );
+    void DrawLine        ( const math::CVector2f& vStart, const math::CVector2f& vEnd ) noexcept;
+    void DrawLine        ( const math::CVector2f& vStart, const math::CVector2f& vEnd, const ColorRGBA& clr, float fLineWidth = 1.f ) noexcept;
 
-    void DrawPolygon     ( const math::CVector2f& vCenter, float fRadius, size_t nSides, float fDegOrientation );
-    void DrawPolygon     ( const math::CVector2f*& rgVertices, size_t nVertices, float fDegOrientation );
-    void DrawPolygon     ( const std::vector<math::CVector2f>& rgVertices, float fDegOrientation );
+    void DrawPolygon     ( const math::CVector2f& vCenter, float fRadius, size_t nSides, float fDegOrientation ) noexcept;
+    void DrawPolygon     ( const math::CVector2f*& rgVertices, size_t nVertices, float fDegOrientation ) noexcept;
+    void DrawPolygon     ( const std::vector<math::CVector2f>& rgVertices, float fDegOrientation ) noexcept;
 
-    void DrawQuad        ( const math::CVector2f rgVertices[4], const ColorRGBA& clr );
-    void DrawAABB        ( const CAABB2& aabb, const ColorRGBA& clr);
+    void DrawQuad        ( const math::CVector2f rgVertices[4], const ColorRGBA& clr ) noexcept;
+    void DrawAABB        ( const CAABB2& aabb, const ColorRGBA& clr) noexcept;
 
     void DrawTexturedAABB( const CAABB2& aabb, const CTexture& texture, const ColorRGBA& clrTint,
                            const math::CVector2f& vTexCoordMins = math::CVector2f(0.f, 0.f), 
-                           const math::CVector2f& vTexCoordMaxs = math::CVector2f(1.f, 1.f) );
+                           const math::CVector2f& vTexCoordMaxs = math::CVector2f(1.f, 1.f) ) noexcept;
 
 };
 

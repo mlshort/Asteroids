@@ -41,7 +41,9 @@ public:
     /// Default Constructor
     CAsteroid(ASTEROID_TYPE type = AST_INVALID) noexcept;
     /// Copy Constructor
-    CAsteroid(const CAsteroid& o) noexcept;
+    CAsteroid(const CAsteroid& o);
+    /// Move Constructor
+    CAsteroid(CAsteroid&& o) noexcept;
     /// Conversion Constructor
     explicit CAsteroid(ASTEROID_TYPE type, const eng::math::CVector2f& vCenter, float fRadius, 
                        const eng::math::CVector2f& vVel, float fAngularVelocity = 0.0) noexcept;
@@ -51,7 +53,7 @@ public:
     inline void              set_AngularVelocity  (float fVelocity) noexcept
     { m_fAngularVelocity = fVelocity; };
 
-    constexpr ASTEROID_TYPE  get_Type            (void) const noexcept
+    constexpr ASTEROID_TYPE  get_Type             (void) const noexcept
     { return m_Type; };
 
     constexpr float          get_AngularVelocity  (void) const noexcept
@@ -82,7 +84,6 @@ public:
     CLargeAsteroid() noexcept;
     /// Conversion Constructor
     explicit CLargeAsteroid(const eng::math::CVector2f& vCenter, const eng::math::CVector2f& vVel, float fAngularVelocity = 0.0) noexcept;
-
     /// Default Destructor
     virtual ~CLargeAsteroid () = default;
 };

@@ -1,7 +1,8 @@
 var classCAsteroid =
 [
     [ "CAsteroid", "classCAsteroid.html#a39937427efbba9ac619a7bf08bc65aee", null ],
-    [ "CAsteroid", "classCAsteroid.html#ae7e53d7c3b2fbe36f6e21bcf4fa1a527", null ],
+    [ "CAsteroid", "classCAsteroid.html#ac3715ca099e0bd3d86c45d8121e6c881", null ],
+    [ "CAsteroid", "classCAsteroid.html#adbd3c53014f0adf0f9801cf5ec3aeafc", null ],
     [ "CAsteroid", "classCAsteroid.html#af0017995e5b884755cd330c2d1362a42", null ],
     [ "~CAsteroid", "classCAsteroid.html#aca850ffb3be1f90f41cb92ec0b616667", null ],
     [ "set_AngularVelocity", "classCAsteroid.html#ad75dcd89c233015da4d5a9b765fffc65", null ],

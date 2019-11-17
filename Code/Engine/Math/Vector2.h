@@ -72,6 +72,12 @@ struct TVector2
           Y( o.Y )
     { };
 
+    /// move constructor
+    constexpr TVector2(TVector2<_Ty>&& o) noexcept
+        : X(o.X),
+          Y(o.Y)
+    { };
+
     /// Default destructor
     ~TVector2() = default;
 

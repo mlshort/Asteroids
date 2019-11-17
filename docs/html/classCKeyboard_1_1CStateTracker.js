@@ -1,7 +1,7 @@
 var classCKeyboard_1_1CStateTracker =
 [
-    [ "CStateTracker", "classCKeyboard_1_1CStateTracker.html#a9537860bcafe4f8f689e8f4617f1c95e", null ],
-    [ "Update", "classCKeyboard_1_1CStateTracker.html#af8ac036a91637b6debf5ecd29cd45d53", null ],
+    [ "CStateTracker", "classCKeyboard_1_1CStateTracker.html#aabe2a9cca5c349dd0fe2995ed62ac666", null ],
+    [ "Update", "classCKeyboard_1_1CStateTracker.html#a85a31975236cb90b3093f793156ea01a", null ],
     [ "InitKeyStates", "classCKeyboard_1_1CStateTracker.html#aef8f4adcdd0c4708ce38826c1eb7f9d5", null ],
     [ "IsKeyPressed", "classCKeyboard_1_1CStateTracker.html#aed1cc5c9aabeb3b1795dbca84b67b7c3", null ],
     [ "IsKeyReleased", "classCKeyboard_1_1CStateTracker.html#ae896eb3cc0768f800f80bdd945a30bd6", null ],

@@ -38,8 +38,8 @@ class CGame
     std::vector<eng::CActor2*>       m_rgActors;
 
 public:
-    /// Default constructor
-    CGame( CSoundManager* pSndManager ) noexcept;
+    /// Initialization constructor
+    CGame( CSoundManager* pSndManager );
     /// Default destructor
     ~CGame() noexcept;
 
@@ -47,7 +47,7 @@ public:
     void Update                 ( float fDeltaTime );
 
     void InitActors             ( void );
-    bool IsShipActive           ( void ) const;
+    bool IsShipActive           ( void ) const noexcept;
     void SpawnShip              ( void );
     void SpawnAsteroidWave      ( void );
     bool SpawnLargeAsteroid     ( void );

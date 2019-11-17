@@ -115,7 +115,7 @@ constexpr _Ty DegreesToRadians(const _Ty& fDegrees) noexcept
  *
  */
 template <class _Ty>
-inline _Ty RangedRand( const _Ty& fRangeMin, const _Ty& fRangeMax )
+inline _Ty RangedRand( const _Ty& fRangeMin, const _Ty& fRangeMax ) noexcept
 {
    // Generate random numbers in the half-closed interval
    // [fRangeMin, fRangeMax). In other words,

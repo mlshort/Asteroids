@@ -97,26 +97,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Vector2_8h__dep__incl.png" border="0" usemap="#C_1_2Users_2Mark_01L_8_01Short_2Source_2Repos_2Asteroids_2Code_2Engine_2Math_2Vector2_8hdep" alt=""/></div>
 <map name="C_1_2Users_2Mark_01L_8_01Short_2Source_2Repos_2Asteroids_2Code_2Engine_2Math_2Vector2_8hdep" id="C_1_2Users_2Mark_01L_8_01Short_2Source_2Repos_2Asteroids_2Code_2Engine_2Math_2Vector2_8hdep">
-<area shape="rect" title="TVector2 template class implementation." alt="" coords="593,5,787,61"/>
+<area shape="rect" title="TVector2 template class implementation." alt="" coords="1149,5,1343,61"/>
 <area shape="rect" href="Actor2_8h.html" title="CActor2 class interface." alt="" coords="287,109,471,165"/>
-<area shape="rect" href="AABB2_8h.html" title="CAABB2 class interface." alt="" coords="755,109,969,165"/>
-<area shape="rect" href="Texture_8h.html" title="CTexture class interface." alt="" coords="1004,109,1219,165"/>
-<area shape="rect" href="CommonDef_8h.html" title="Application Common Definitions." alt="" coords="527,228,631,255"/>
-<area shape="rect" href="Game_8h.html" title="CGame class interface." alt="" coords="656,228,724,255"/>
-<area shape="rect" href="Actor2_8cpp.html" title="CActor2 class implementation." alt="" coords="116,213,315,269"/>
+<area shape="rect" href="AABB2_8h.html" title="CAABB2 class interface." alt="" coords="900,109,1115,165"/>
+<area shape="rect" href="Texture_8h.html" title="CTexture class interface." alt="" coords="1139,109,1353,165"/>
+<area shape="rect" href="CommonDef_8h.html" title="Application Common Definitions." alt="" coords="1445,124,1549,151"/>
+<area shape="rect" href="Game_8h.html" title="CGame class interface." alt="" coords="1381,228,1449,255"/>
+<area shape="rect" href="Actor2_8cpp.html" title="CActor2 class implementation." alt="" coords="5,213,204,269"/>
 <area shape="rect" href="Asteroid_8h.html" title="CAsteroid class interface." alt="" coords="339,228,420,255"/>
 <area shape="rect" href="Ship_8h.html" title="CShip class interface." alt="" coords="445,228,503,255"/>
-<area shape="rect" href="Projectile_8h.html" title="CProjectile class interface." alt="" coords="5,228,92,255"/>
-<area shape="rect" href="Asteroid_8cpp.html" title="CAsteroid class implementation." alt="" coords="551,332,645,359"/>
-<area shape="rect" href="Game_8cpp.html" title="CApplication class implementation." alt="" coords="318,332,401,359"/>
-<area shape="rect" href="Ship_8cpp.html" title="CShip class implementation." alt="" coords="669,332,743,359"/>
-<area shape="rect" href="Projectile_8cpp.html" title="CProjectile class implementation." alt="" coords="425,332,526,359"/>
-<area shape="rect" href="AABB2_8cpp.html" title="CAABB2 class implementation." alt="" coords="748,213,976,269"/>
-<area shape="rect" href="Renderer_8h.html" title="CRenderer class interface." alt="" coords="1000,213,1223,269"/>
-<area shape="rect" href="Renderer_8cpp.html" title="CRenderer class implementation." alt="" coords="1061,317,1298,373"/>
-<area shape="rect" href="Application_8cpp.html" title="CApplication class implementation." alt="" coords="925,332,1036,359"/>
-<area shape="rect" href="Texture_8cpp.html" title="CTexture class implementation." alt="" coords="1247,213,1475,269"/>
-<area shape="rect" href="SoundManager_8cpp.html" title="CSoundManager class implementation." alt="" coords="767,332,901,359"/>
+<area shape="rect" href="Projectile_8h.html" title="CProjectile class interface." alt="" coords="228,228,315,255"/>
+<area shape="rect" href="Asteroid_8cpp.html" title="CAsteroid class implementation." alt="" coords="1389,332,1484,359"/>
+<area shape="rect" href="Game_8cpp.html" title="CApplication class implementation." alt="" coords="1021,332,1103,359"/>
+<area shape="rect" href="Ship_8cpp.html" title="CShip class implementation." alt="" coords="1569,332,1643,359"/>
+<area shape="rect" href="Projectile_8cpp.html" title="CProjectile class implementation." alt="" coords="895,332,997,359"/>
+<area shape="rect" href="AABB2_8cpp.html" title="CAABB2 class implementation." alt="" coords="528,213,756,269"/>
+<area shape="rect" href="Renderer_8h.html" title="CRenderer class interface." alt="" coords="1135,213,1357,269"/>
+<area shape="rect" href="Renderer_8cpp.html" title="CRenderer class implementation." alt="" coords="1127,317,1365,373"/>
+<area shape="rect" href="Application_8cpp.html" title="CApplication class implementation." alt="" coords="1697,332,1808,359"/>
+<area shape="rect" href="Texture_8cpp.html" title="CTexture class implementation." alt="" coords="780,213,1008,269"/>
+<area shape="rect" href="Application_8h.html" title="CApplication class interface." alt="" coords="1736,228,1833,255"/>
+<area shape="rect" href="SoundManager_8cpp.html" title="CSoundManager class implementation." alt="" coords="1525,228,1660,255"/>
 </map>
 </div>
 </div>
@@ -210,19 +211,19 @@ template&lt;typename _Ty , class  = typename std::enable_if&lt; std::is_floating
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;{</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    _Ty X = math::CalcXComponent(degDir);</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keywordflow">if</span> (math::fEqual(X, _Ty(), 2))</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        X = _Ty();</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    _Ty Y = math::CalcYComponent(degDir);</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="keywordflow">if</span> (math::fEqual(Y, _Ty(), 2))</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        Y = _Ty();</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    TVector2&lt;_Ty&gt; vForce(X * nMagnitude, Y * nMagnitude);</div>
+<div class="fragment"><div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;{</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    _Ty X = math::CalcXComponent(degDir);</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keywordflow">if</span> (math::fEqual(X, _Ty(), 2))</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        X = _Ty();</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="keywordflow">return</span> vForce;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;};</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    _Ty Y = math::CalcYComponent(degDir);</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="keywordflow">if</span> (math::fEqual(Y, _Ty(), 2))</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        Y = _Ty();</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    TVector2&lt;_Ty&gt; vForce(X * nMagnitude, Y * nMagnitude);</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keywordflow">return</span> vForce;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;};</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

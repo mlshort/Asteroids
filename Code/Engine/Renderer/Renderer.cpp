@@ -30,7 +30,7 @@ using  namespace eng::math;
 constexpr float g_fDefaultLineWidth = 2.f;
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::Initialize(void)
+void CRenderer::Initialize(void) noexcept
 {
     glEnable( GL_BLEND );
     glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
@@ -39,80 +39,80 @@ void CRenderer::Initialize(void)
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::ClearColorBuffer(void)
+void CRenderer::ClearColorBuffer(void) noexcept
 {
     glClear( GL_COLOR_BUFFER_BIT );
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::SetViewPort( int iX, int iY, int iWidth, int iHeight )
+void CRenderer::SetViewPort( int iX, int iY, int iWidth, int iHeight ) noexcept
 {
     glViewport(iX, iY, iWidth, iHeight);
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::SetOrtho( const CVector2f& vBottomLeft, const CVector2f& vTopRight )
+void CRenderer::SetOrtho( const CVector2f& vBottomLeft, const CVector2f& vTopRight ) noexcept
 {
     glLoadIdentity();
     glOrtho(vBottomLeft.X, vTopRight.X, vBottomLeft.Y, vTopRight.Y, 0.f, 1.f);
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::SetLineWidth ( float fLineWidth )
+void CRenderer::SetLineWidth ( float fLineWidth ) noexcept
 {
     glLineWidth( fLineWidth );
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::SetColor     ( const ColorRGBA& clr )
+void CRenderer::SetColor     ( const ColorRGBA& clr ) noexcept
 {
     glColor4f( clr.fRed, clr.fGreen, clr.fBlue, clr.fAlpha );
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::SetPointSize ( float fPointSize )
+void CRenderer::SetPointSize ( float fPointSize ) noexcept
 {
     glPointSize( fPointSize );
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::SetClearColor (const ColorRGBA& clr )
+void CRenderer::SetClearColor (const ColorRGBA& clr ) noexcept
 {
     glClearColor( clr.fRed, clr.fGreen, clr.fBlue, clr.fAlpha );
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::TranslateView( const CVector2f& vTranslate )
+void CRenderer::TranslateView( const CVector2f& vTranslate ) noexcept
 {
     glTranslatef( vTranslate.X, vTranslate.Y, 0.f );
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::RotateView( float fDegrees )
+void CRenderer::RotateView( float fDegrees ) noexcept
 {
     glRotatef( fDegrees, 0.f, 0.f, 1.f );
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::ScaleView( float fUniformScale )
+void CRenderer::ScaleView( float fUniformScale ) noexcept
 {
     glScalef(fUniformScale, fUniformScale, 1.f);
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::PushView(void)
+void CRenderer::PushView(void) noexcept
 {
     glPushMatrix();
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::PopView(void)
+void CRenderer::PopView(void) noexcept
 {
     glPopMatrix();
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::DrawLine( const CVector2f& vStart, const CVector2f& vEnd) 
+void CRenderer::DrawLine( const CVector2f& vStart, const CVector2f& vEnd) noexcept
 {
     glDisable( GL_TEXTURE_2D ); // need to disable texturing before drawing non-textured objects
     glBegin ( GL_LINES );
@@ -124,7 +124,7 @@ void CRenderer::DrawLine( const CVector2f& vStart, const CVector2f& vEnd)
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::DrawPoint( const CVector2f& vCenter, const ColorRGBA& clr, float fPointSize )
+void CRenderer::DrawPoint( const CVector2f& vCenter, const ColorRGBA& clr, float fPointSize ) noexcept
 {
     glPointSize( fPointSize );
     glColor4f  ( clr.fRed, clr.fGreen, clr.fBlue, clr.fAlpha );
@@ -135,7 +135,7 @@ void CRenderer::DrawPoint( const CVector2f& vCenter, const ColorRGBA& clr, float
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::DrawLine( const CVector2f& vStart, const CVector2f& vEnd, const ColorRGBA& clr, float fLineWidth /* = 1.f */) 
+void CRenderer::DrawLine( const CVector2f& vStart, const CVector2f& vEnd, const ColorRGBA& clr, float fLineWidth /* = 1.f */) noexcept
 {
     glLineWidth( fLineWidth );
     glColor4f  ( clr.fRed, clr.fGreen, clr.fBlue, clr.fAlpha );
@@ -146,7 +146,7 @@ void CRenderer::DrawLine( const CVector2f& vStart, const CVector2f& vEnd, const 
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::DrawPolygon( const CVector2f& vCenter, float fRadius, size_t nSides, float fDegOrientation )
+void CRenderer::DrawPolygon( const CVector2f& vCenter, float fRadius, size_t nSides, float fDegOrientation ) noexcept
 {
     const float RADIANS_PER_SIDE = static_cast<float>( eng::math::RADIANS_PER_CIRCLE / nSides );
 
@@ -168,7 +168,7 @@ void CRenderer::DrawPolygon( const CVector2f& vCenter, float fRadius, size_t nSi
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::DrawPolygon( const CVector2f*& rgVertices, size_t nVertices, float fDegOrientation )
+void CRenderer::DrawPolygon( const CVector2f*& rgVertices, size_t nVertices, float fDegOrientation ) noexcept
 {
     glPushMatrix();
 
@@ -190,7 +190,7 @@ void CRenderer::DrawPolygon( const CVector2f*& rgVertices, size_t nVertices, flo
 };
 
 //-----------------------------------------------------------------------------------------------
-void CRenderer::DrawPolygon( const std::vector<CVector2f>& rgVertices, float fDegOrientation )
+void CRenderer::DrawPolygon( const std::vector<CVector2f>& rgVertices, float fDegOrientation ) noexcept
 {
     glPushMatrix();
 
@@ -211,7 +211,7 @@ void CRenderer::DrawPolygon( const std::vector<CVector2f>& rgVertices, float fDe
 };
 
 void CRenderer::DrawTexturedAABB( const CAABB2& aabb, const CTexture& texture, const ColorRGBA& tint,
-                                  const CVector2f& vTexCoordMins, const CVector2f& vTexCoordMaxs )
+                                  const CVector2f& vTexCoordMins, const CVector2f& vTexCoordMaxs ) noexcept
 {
     glColor4f    ( tint.fRed, tint.fGreen, tint.fBlue, tint.fAlpha );
     glEnable     ( GL_TEXTURE_2D );
@@ -229,7 +229,7 @@ void CRenderer::DrawTexturedAABB( const CAABB2& aabb, const CTexture& texture, c
     return;
 };
 
-void CRenderer::DrawQuad        ( const CVector2f rgVertices[4], const ColorRGBA& clr )
+void CRenderer::DrawQuad        ( const CVector2f rgVertices[4], const ColorRGBA& clr ) noexcept
 { 
     glColor4f  ( clr.fRed, clr.fGreen, clr.fBlue, clr.fAlpha );
     glBegin ( GL_QUADS );
@@ -244,7 +244,7 @@ void CRenderer::DrawQuad        ( const CVector2f rgVertices[4], const ColorRGBA
     return;
 };
 
-void CRenderer::DrawAABB        ( const CAABB2& aabb, const ColorRGBA& clr )
+void CRenderer::DrawAABB        ( const CAABB2& aabb, const ColorRGBA& clr ) noexcept
 { 
     glColor4f( clr.fRed, clr.fGreen, clr.fBlue, clr.fAlpha );
     glDisable( GL_TEXTURE_2D ); // need to disable texturing before drawing non-textured objects

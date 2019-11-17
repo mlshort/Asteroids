@@ -22,11 +22,13 @@
 extern TCHAR  g_szModulePath[MAX_PATH];
 
 
-CSoundManager::CSoundManager()
-    : m_nCount(0)
+CSoundManager::CSoundManager() noexcept
+    : m_nCount(0),
+      m_nLastPlayedInstance(-1),
+      m_nLastPlayedSound(-1)
 {
     memset(m_rgInstanceCount, 0, sizeof(m_rgInstanceCount));
-    memset(m_pInstance, 0, sizeof(m_pInstance));
+    memset(m_rgInstances, 0, sizeof(m_rgInstances));
 
     ::CoInitializeEx(nullptr, COINIT_MULTITHREADED);
     AUDIO_ENGINE_FLAGS eflags = AudioEngine_Default;
@@ -34,8 +36,15 @@ CSoundManager::CSoundManager()
 #ifdef _DEBUG
     eflags = eflags | AudioEngine_Debug;
 #endif
-
-    m_pAudioEngine = new AudioEngine(eflags);
+    try
+    {
+        m_pAudioEngine = new AudioEngine(eflags);
+    }
+    catch (...)
+    {
+        delete m_pAudioEngine;
+        m_pAudioEngine = nullptr;
+    }
 }
 
 
@@ -46,14 +55,13 @@ CSoundManager::~CSoundManager()
     {
         for (int j = 0; j < m_rgInstanceCount[i]; j++)
         {
-            delete m_pInstance[i][j];
+            delete m_rgInstances[i][j];
         }
-        delete [] m_pInstance[i];
+        delete [] m_rgInstances[i];
     }
 
-
-    for (int i = 0; i < (int) m_pSoundEffects.size(); i++)
-        delete m_pSoundEffects[i];
+    for (auto SndEffect : m_rgSoundEffects)
+        delete SndEffect;
 
     delete m_pAudioEngine;
 
@@ -61,7 +69,7 @@ CSoundManager::~CSoundManager()
 }
 
 
-int CSoundManager::Load(const wchar_t* szFileName)
+int CSoundManager::Load(const wchar_t* szFileName) noexcept
 {
     int iRetVal = -1;
     SoundEffect* pSndEff = nullptr;
@@ -78,14 +86,14 @@ int CSoundManager::Load(const wchar_t* szFileName)
 
     if (pSndEff)
     {
-        m_pSoundEffects.push_back (pSndEff);
-        iRetVal = static_cast<int>(m_pSoundEffects.size () - 1);
+        m_rgSoundEffects.push_back (pSndEff);
+        iRetVal = static_cast<int>(m_rgSoundEffects.size() - 1);
     }
    
     return iRetVal;
 }
 
-bool CSoundManager::InitSounds(void)
+bool CSoundManager::InitSounds(void) noexcept
 {
     int iResult = -1;
     for (int iCtr = 0; iCtr < _countof (k_szSoundFiles); iCtr++)
@@ -101,9 +109,9 @@ bool CSoundManager::InitSounds(void)
     return (iResult != -1);
 }
 
-int CSoundManager::LoadAndCreateInstance(const wchar_t* filename)
+int CSoundManager::LoadAndCreateInstance(const wchar_t* szFilename) noexcept
 {
-    auto iIndex = Load(filename);
+    auto iIndex = Load(szFilename);
 
     if (iIndex != -1)
        CreateInstances(iIndex, 1, SoundEffectInstance_Default );
@@ -111,26 +119,26 @@ int CSoundManager::LoadAndCreateInstance(const wchar_t* filename)
     return iIndex;
 }
 
-bool CSoundManager::Update(void)
+bool CSoundManager::Update(void) noexcept
 {
     return m_pAudioEngine ? m_pAudioEngine->Update () : false;
 };
 
-bool CSoundManager::IsAudioDevicePresent (void) const
+bool CSoundManager::IsAudioDevicePresent (void) const noexcept
 {
     return m_pAudioEngine ? m_pAudioEngine->IsAudioDevicePresent () : false;
 };
 
 
-void CSoundManager::CreateInstances(int iIndex, int iNumInstances, SOUND_EFFECT_INSTANCE_FLAGS flags)
+void CSoundManager::CreateInstances(int iIndex, int iNumInstances, SOUND_EFFECT_INSTANCE_FLAGS flags) noexcept
 {
     m_rgInstanceCount[iIndex] = iNumInstances;
-    m_pInstance[iIndex] = new SoundEffectInstance*[iNumInstances];
+    m_rgInstances[iIndex] = new SoundEffectInstance*[iNumInstances];
 
     try
     {
-    for (int i = 0; i < iNumInstances; i++)
-        m_pInstance[iIndex][i] = m_pSoundEffects[iIndex]->CreateInstance(flags).release();
+        for (int i = 0; i < iNumInstances; i++)
+            m_rgInstances[iIndex][i] = m_rgSoundEffects[iIndex]->CreateInstance(flags).release();
     }
     catch (...)
     {
@@ -141,31 +149,31 @@ void CSoundManager::CreateInstances(int iIndex, int iNumInstances, SOUND_EFFECT_
 }
 
 
-int CSoundManager::GetNextInstance(int iIndex)
+int CSoundManager::GetNextInstance(int iIndex) noexcept
 {
     int iInstance = 0; //current instance
 
     //get status of first instance
-    SoundState soundState = m_pInstance[iIndex][iInstance]->GetState();
+    SoundState soundState = m_rgInstances[iIndex][iInstance]->GetState();
 
     //find next unplayed instance, if any
     while (iInstance < m_rgInstanceCount[iIndex] && ( soundState == PLAYING )) //while current copy in use
     {
         if (++iInstance < m_rgInstanceCount[iIndex]) //go to next copy
-            soundState = m_pInstance[iIndex][iInstance]->GetState();
+            soundState = m_rgInstances[iIndex][iInstance]->GetState();
     }
     return iInstance;
 }
 
 
-int CSoundManager::Play(int iIndex)
+int CSoundManager::Play(int iIndex) noexcept
 {
     if (iIndex < 0 || iIndex >= m_nCount)
         return -1; //bail if bad index
 
     int iInstance = GetNextInstance(iIndex);
     if (iInstance < m_rgInstanceCount[iIndex]) //if unused copy found
-        m_pInstance[iIndex][iInstance]->Play(); //Play it
+        m_rgInstances[iIndex][iInstance]->Play(); //Play it
 
     m_nLastPlayedSound = iIndex;
     m_nLastPlayedInstance = iInstance;
@@ -174,14 +182,14 @@ int CSoundManager::Play(int iIndex)
 }
 
 
-int CSoundManager::Loop(int iIndex)
+int CSoundManager::Loop(int iIndex) noexcept
 {
     if (iIndex < 0 || iIndex >= m_nCount)
         return -1; //bail if bad index
 
     int iInstance = GetNextInstance(iIndex);
     if (iInstance < m_rgInstanceCount[iIndex]) //if unused copy found
-        m_pInstance[iIndex][iInstance]->Play(true); //Play it looped
+        m_rgInstances[iIndex][iInstance]->Play(true); //Play it looped
 
     m_nLastPlayedSound = iIndex;
     m_nLastPlayedInstance = iInstance;
@@ -189,21 +197,21 @@ int CSoundManager::Loop(int iIndex)
     return iInstance;
 }
 
-void CSoundManager::Stop(int iIndex)
+void CSoundManager::Stop(int iIndex) noexcept
 {
     if (iIndex < 0 || iIndex >= m_nCount)
         return; //bail if bad index
 
     for (int iInstance = 0; iInstance < m_rgInstanceCount[iIndex]; iInstance++)
     {
-        SoundEffectInstance* p = m_pInstance[iIndex][iInstance];
+        SoundEffectInstance* p = m_rgInstances[iIndex][iInstance];
         if (p != nullptr)
             p->Stop();
     }
 }
 
-/// Set the SetPitch of a sound instance.
-void CSoundManager::SetPitch(float p, int iInstance, int iIndex)
+
+void CSoundManager::SetPitch(float fPitch, int iInstance /* = -1 */, int iIndex /* = -1 */)
 {
     if (iIndex == -1)
         iIndex = m_nLastPlayedSound;
@@ -212,11 +220,11 @@ void CSoundManager::SetPitch(float p, int iInstance, int iIndex)
         iInstance = m_nLastPlayedInstance;
 
     if (iInstance >= 0 && iInstance < m_rgInstanceCount[iIndex])
-        m_pInstance[iIndex][iInstance]->SetPitch(p);
+        m_rgInstances[iIndex][iInstance]->SetPitch(fPitch);
 }
 
-/// Set the SetVolume of a sound instance.
-void CSoundManager::SetVolume(float v, int iInstance, int iIndex)
+
+void CSoundManager::SetVolume(float fVolume, int iInstance /* = -1 */, int iIndex /* = -1 */)
 {
     if (iIndex == -1)
         iIndex = m_nLastPlayedSound;
@@ -225,5 +233,5 @@ void CSoundManager::SetVolume(float v, int iInstance, int iIndex)
         iInstance = m_nLastPlayedInstance;
 
     if (iInstance >= 0 && iInstance < m_rgInstanceCount[iIndex])
-        m_pInstance[iIndex][iInstance]->SetVolume(v);
+        m_rgInstances[iIndex][iInstance]->SetVolume(fVolume);
 }

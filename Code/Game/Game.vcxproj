@@ -85,6 +85,7 @@
     <TargetName>$(ProjectName)D_x64</TargetName>
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)Bin\</OutDir>
+    <CodeAnalysisRuleSet>..\..\..\..\..\MyNativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

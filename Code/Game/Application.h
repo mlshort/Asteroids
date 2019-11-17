@@ -25,11 +25,10 @@
     #include "XboxController.h"
 #endif
 
+#include "CommonDef.h"
 // forward declaration
 class CGame;
 class CSoundManager;
-
-const size_t MAX_CONTROLLERS = 4;  // XInput handles up to 4 controllers
 
 class CApplication
 {
@@ -47,20 +46,20 @@ class CApplication
 
 public: 
     /// Default constructor
-    CApplication() noexcept;
+    constexpr CApplication() noexcept;
     /// Default destructor
     ~CApplication() noexcept;
 
     void Initialize ( HINSTANCE hInstance );
 
-    void Shutdown   ( void );
+    void Shutdown   ( void ) noexcept;
 
     void RunFrame   ( void );
     void Render     ( void );
     void Update     ( float fDeltaTime );
 
-    bool PlaySound  ( int iIndex );
-    bool StopSound  ( int iIndex );
+    bool PlaySound  ( int iIndex ) noexcept;
+    bool StopSound  ( int iIndex ) noexcept;
 
     inline bool IsKeyPressed         ( Keys key ) const noexcept
     { return m_Keyboard.IsKeyPressed(key); };
@@ -144,8 +143,8 @@ public:
     static void CALLBACK    KeyboardHandler( UINT nKey, BOOL bKeyPressed );
 
 private:
-    void    CreateOpenGLWindow      ( void );
-    void    RegisterWndClass        ( void );
+    void    CreateOpenGLWindow      ( void ) noexcept;
+    void    RegisterWndClass        ( void ) noexcept;
 
     void    OnSize                  ( void );
     void    ProcessKeyboardMsg      ( UINT uMsg, WPARAM wParam, LPARAM lParam );
@@ -157,6 +156,20 @@ private:
     CApplication(const CApplication&& o) = delete;
     /// Assignment operator
     CApplication& operator=(const CApplication& rhs) = delete;
+};
+
+//-----------------------------------------------------------------------------------------------
+constexpr CApplication::CApplication() noexcept
+  : m_pGame(nullptr),
+    m_pSoundManager(nullptr),
+    m_Keyboard(),
+    m_hInstance(nullptr),
+    m_hMainWnd(nullptr),
+    m_hdcDisplay(nullptr),
+    m_pszAppName(_T("Asteroids")),
+    m_iMainWinWidth(WINDOW_PHYSICAL_WIDTH),
+    m_iMainWinHeight(WINDOW_PHYSICAL_HEIGHT)
+{
 };
 
 _declspec(selectany) CApplication g_theApp;

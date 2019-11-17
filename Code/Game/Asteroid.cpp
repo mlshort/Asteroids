@@ -30,7 +30,7 @@ CAsteroid::CAsteroid(ASTEROID_TYPE type) noexcept
 };
 
 //-----------------------------------------------------------------------------------------------
-CAsteroid::CAsteroid(const CAsteroid& o) noexcept
+CAsteroid::CAsteroid(const CAsteroid& o)
     : eng::CActor2(o),
       m_Type(o.m_Type),
       m_fAngularVelocity(o.m_fAngularVelocity),
@@ -39,6 +39,15 @@ CAsteroid::CAsteroid(const CAsteroid& o) noexcept
 {
 };
 
+//-----------------------------------------------------------------------------------------------
+CAsteroid::CAsteroid(CAsteroid&& o) noexcept
+    : eng::CActor2(o),
+      m_Type(o.m_Type),
+      m_fAngularVelocity(o.m_fAngularVelocity),
+      m_degOrientation(o.m_degOrientation),
+      m_rgVertices(o.m_rgVertices)
+{
+};
 //-----------------------------------------------------------------------------------------------
 CAsteroid::CAsteroid(ASTEROID_TYPE type, const eng::math::CVector2f& vCenter, float fRadius, 
                      const eng::math::CVector2f& vVel, float fAngularVelocity) noexcept

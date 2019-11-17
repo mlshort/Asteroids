@@ -21,26 +21,12 @@
 #pragma comment( lib, "Xinput9_1_0" ) // We need to explicitly use XInput v9.1.0, as newer (1_4+) versions do not run under Windows 7 or before
 
 //-----------------------------------------------------------------------------------------------
-CXboxController::CXboxController(DWORD dwController /* = 0 */,
-                                 WORD wLeftThumbDZ,
-                                 WORD wRightThumbDZ) noexcept
-    : m_dwController(dwController),
-      m_dwResult(0),
-      m_wLeftThumbDeadZone (wLeftThumbDZ),
-      m_wRightThumbDeadZone(wRightThumbDZ),
-      m_bConnected(false)
-{
-    memset(&m_stInput, 0, sizeof(m_stInput));
-    memset(&m_stLast, 0, sizeof(m_stLast));
-}
-
-//-----------------------------------------------------------------------------------------------
 CXboxController::~CXboxController()
 {
 }
 
 //-----------------------------------------------------------------------------------------------
-bool CXboxController::UpdateControllerState(void)
+bool CXboxController::UpdateControllerState(void) noexcept
 {
      m_stLast   = m_stInput; 
      m_dwResult = XInputGetState( m_dwController, &m_stInput );

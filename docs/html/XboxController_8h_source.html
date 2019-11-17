@@ -88,12 +88,12 @@ $(document).ready(function(){initNavTree('XboxController_8h_source.html','');});
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    XINPUT_STATE m_stLast;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span>         m_bConnected;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classCXboxController.html">CXboxController</a>(DWORD dwController = 0, </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                             WORD wLeftThumbDZ  = XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE, </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                             WORD wRightThumbDZ = XINPUT_GAMEPAD_RIGHT_THUMB_DEADZONE) noexcept;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    constexpr <span class="keyword">explicit</span> <a class="code" href="classCXboxController.html">CXboxController</a>(DWORD dwController = 0, </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                       WORD wLeftThumbDZ  = XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE, </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                       WORD wRightThumbDZ = XINPUT_GAMEPAD_RIGHT_THUMB_DEADZONE) noexcept;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classCXboxController.html#adc2d094d301765aad11cc1c1266bdb72" title="Default destructor.">~CXboxController</a>() noexcept;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span>  UpdateControllerState(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span>  UpdateControllerState(<span class="keywordtype">void</span>) noexcept;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span>  IsThumbL_Pressed     (<span class="keywordtype">void</span>) <span class="keyword">const</span> noexcept;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
@@ -169,11 +169,24 @@ $(document).ready(function(){initNavTree('XboxController_8h_source.html','');});
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    constexpr SHORT get_ThumbRY(<span class="keywordtype">void</span>) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    { <span class="keywordflow">return</span> m_stInput.Gamepad.sThumbRY; };</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;constexpr CXboxController::CXboxController(DWORD dwController <span class="comment">/* = 0 */</span>,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    WORD wLeftThumbDZ,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    WORD wRightThumbDZ) noexcept</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    : m_dwController(dwController),</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      m_dwResult(0),</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      m_wLeftThumbDeadZone(wLeftThumbDZ),</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      m_wRightThumbDeadZone(wRightThumbDZ),</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      m_bConnected(<span class="keyword">false</span>),</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      m_stInput{ 0 },</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      m_stLast{ 0 }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">//    memset(&amp;m_stInput, 0, sizeof(m_stInput));</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">//    memset(&amp;m_stLast, 0, sizeof(m_stLast));</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

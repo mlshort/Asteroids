@@ -1,12 +1,12 @@
 var classCGame =
 [
-    [ "CGame", "classCGame.html#a8f9907ca801172abfcd344f2ffebc869", null ],
+    [ "CGame", "classCGame.html#afdf2cb7a0bef679e6a3d7dabedb6cd19", null ],
     [ "~CGame", "classCGame.html#a83b0c9a26683d7a6960f3b7230563315", null ],
     [ "CGame", "classCGame.html#af7631392fe28c5e2572af426b48f44b8", null ],
     [ "Render", "classCGame.html#af4e130513b12044b244a333f18988dba", null ],
     [ "Update", "classCGame.html#ac73ca5f293565e371f05d512f4eb3f4b", null ],
     [ "InitActors", "classCGame.html#a91e23f950c683e4b6e5b3b473e011e0e", null ],
-    [ "IsShipActive", "classCGame.html#a47702817e2be95ed7487204f7a4ac0e4", null ],
+    [ "IsShipActive", "classCGame.html#a23225d90e5671d84b1634064c59eac34", null ],
     [ "SpawnShip", "classCGame.html#a1f3c1d6a5cb8aae9cf42239b076a875a", null ],
     [ "SpawnAsteroidWave", "classCGame.html#a606f55aaf1545c200b3641f6cc31f0e6", null ],
     [ "SpawnLargeAsteroid", "classCGame.html#a1d9b60c69b6d6e9c4b6e24f27c6303a4", null ],

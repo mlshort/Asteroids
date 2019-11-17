@@ -1,8 +1,8 @@
 var classCXboxController =
 [
-    [ "CXboxController", "classCXboxController.html#a71eee7ebef7d2752e623d3ff89d005d0", null ],
+    [ "CXboxController", "classCXboxController.html#ab9df6b89d209c5e15aed9708b6f5ae01", null ],
     [ "~CXboxController", "classCXboxController.html#adc2d094d301765aad11cc1c1266bdb72", null ],
-    [ "UpdateControllerState", "classCXboxController.html#ab4c9f60eb3fdf107805af850029de379", null ],
+    [ "UpdateControllerState", "classCXboxController.html#a52e3f7e8329c3ee8fd9d8524a4be8ddc", null ],
     [ "IsThumbL_Pressed", "classCXboxController.html#adb43f6f5d05f73f257f45483e0a4a932", null ],
     [ "IsThumbR_Pressed", "classCXboxController.html#afd93685d4a4f6a9a630b12e543efb5bb", null ],
     [ "CalcThumbL_Magnitude", "classCXboxController.html#adc54831baeef61b21f99a671653128de", null ],

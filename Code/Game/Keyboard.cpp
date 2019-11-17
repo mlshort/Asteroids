@@ -20,8 +20,8 @@
 #include "Keyboard.h"
 
 // Generic helper functions
-bool SetKeyDownState(int iKey, KeyboardState& state);
-bool SetKeyUpState  (int iKey, KeyboardState& state);
+bool SetKeyDownState(int iKey, KeyboardState& state) noexcept;
+bool SetKeyUpState  (int iKey, KeyboardState& state) noexcept;
 
 //-----------------------------------------------------------------------------------------------
 bool  KeyboardState::IsKeyStateSet(Keys key) const noexcept
@@ -37,14 +37,6 @@ bool  KeyboardState::IsKeyStateSet(Keys key) const noexcept
     }
     return bRetVal;
 }
-
-//-----------------------------------------------------------------------------------------------
-CKeyboard::CKeyboard() noexcept
-    : m_State(),
-      m_StateTracker(),
-      m_pfHandler(nullptr)
-{
-};
 
 //-----------------------------------------------------------------------------------------------
 void CKeyboard::InitKeyStates(void) noexcept
@@ -137,7 +129,7 @@ void CKeyboard::ProcessMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 // KeyboardStateTracker
 //======================================================================================
 
-void CKeyboard::CStateTracker::Update( const KeyboardState& state )
+void CKeyboard::CStateTracker::Update( const KeyboardState& state ) noexcept
 {
     auto pCurr     = reinterpret_cast<const uint32_t*>(&state);
     auto pPrev     = reinterpret_cast<const uint32_t*>(&m_stLast);
@@ -184,7 +176,7 @@ bool  CKeyboard::CStateTracker::IsKeyLast(Keys key) const noexcept
 };
 
 //-----------------------------------------------------------------------------------------------
-bool SetKeyDownState(int iKey, KeyboardState& state)
+bool SetKeyDownState(int iKey, KeyboardState& state) noexcept
 {
     bool bRetVal = false;
     if (( iKey >= 0 ) && ( iKey <= VK_OEM_CLEAR))
@@ -198,7 +190,7 @@ bool SetKeyDownState(int iKey, KeyboardState& state)
 };
 
 //-----------------------------------------------------------------------------------------------
-bool SetKeyUpState(int iKey, KeyboardState& state)
+bool SetKeyUpState(int iKey, KeyboardState& state) noexcept
 {
     bool bRetVal = false;
     if (( iKey >= 0 ) && ( iKey <= VK_OEM_CLEAR))

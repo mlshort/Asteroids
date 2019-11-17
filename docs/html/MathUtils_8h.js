@@ -8,7 +8,7 @@ var MathUtils_8h =
     [ "CalcDistance", "MathUtils_8h.html#a4ce7378b145a11f2c038c88344e6a4b0", null ],
     [ "RadiansToDegrees", "MathUtils_8h.html#a4b6fbb7e8e61d2e752c7e49b8f63ff6f", null ],
     [ "DegreesToRadians", "MathUtils_8h.html#a3418af5420d0b45667bdc1dea8e07848", null ],
-    [ "RangedRand", "MathUtils_8h.html#a4ffab91ce1991312f49a5ac0c865454f", null ],
+    [ "RangedRand", "MathUtils_8h.html#a4e215957901c5f13c2d6f46c13e51fab", null ],
     [ "Clamp", "MathUtils_8h.html#a2f7fe84bceace50ea56065006f4d839c", null ],
     [ "CalcXComponent", "MathUtils_8h.html#a71816ae28b5f9a43fe46e676f3414730", null ],
     [ "CalcYComponent", "MathUtils_8h.html#a9db9f685bef0bbf50a26c7e848dd38a4", null ],

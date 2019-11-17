@@ -32,7 +32,7 @@ public:
     /// Conversion Constructor
     constexpr explicit CShip(float fCenterX, float fCenterY, float fDeltaX = 0.0, float fDeltaY = 0.0) noexcept;
     /// Default Destructor
-    virtual ~CShip() noexcept;
+    virtual ~CShip() noexcept = default;
 
 /**
   *  @brief returns the ship orientation in degrees
@@ -41,8 +41,8 @@ public:
     { return m_degOrientation; };
 
 // IRenderable  
-    void              Render         ( void ) const override;
-    void              Update         ( float fDeltaTime ) override;
+    void              Render         ( void ) const noexcept override;
+    void              Update         ( float fDeltaTime ) noexcept override;
 
 private:
     void               ThrustForward  ( float fDeltaTime, float fThrust ) noexcept;

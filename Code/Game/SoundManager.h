@@ -26,7 +26,7 @@ using namespace DirectX;
 
 constexpr const size_t k_nMaxSounds = 20;
 
-/// \brief The sound manager.
+/// @brief The sound manager.
 ///
 /// The sound manager allows you to Play multiple
 /// overlapping copies of sounds simultaneously.
@@ -35,42 +35,90 @@ class CSoundManager
 {
 private:
     AudioEngine*              m_pAudioEngine; ///< XAudio 2.8 Engine wrapped up in DirectXTK.
-    std::vector<SoundEffect*> m_pSoundEffects; ///< A list of sound effect.
-    SoundEffectInstance**     m_pInstance[k_nMaxSounds]; ///< A list of arrays of sound effect instances.
+    std::vector<SoundEffect*> m_rgSoundEffects; ///< A list of sound effect.
+    SoundEffectInstance**     m_rgInstances[k_nMaxSounds]; ///< A list of arrays of sound effect instances.
 
     int m_rgInstanceCount[k_nMaxSounds]; ///< Number of copies of each sound.
 
     int m_nCount;              ///< Number of sounds loaded.
-    int m_nMaxSounds;          ///< Maximum number of sounds allowed.
     int m_nLastPlayedSound;    ///< Last sound played.
     int m_nLastPlayedInstance; ///< Instance of the last sound played.
 
-    void CreateInstances(int iIndex, int n, SOUND_EFFECT_INSTANCE_FLAGS flags); ///< Create sound instances.
 /**
- *  @retval -1 on error
+ *  Create sound instances
  */
-    int  Load(const wchar_t* szFilename); ///< Load sound from file.
-    int  GetNextInstance(int iIndex);     ///< Get the next instance that is not playing.
+    void CreateInstances(int iIndex, int nNumInstances, SOUND_EFFECT_INSTANCE_FLAGS flags) noexcept;
+/**
+ *  Load sound from file
+ *
+ *  @retval int  containing sound file index
+ *  @retval -1   on error
+ */
+    int  Load(const wchar_t* szWaveFileName) noexcept;
+/**
+ *  Get the next instance that is not playing
+ */
+    int  GetNextInstance(int iIndex) noexcept;
 
 public:
-    CSoundManager();  ///< Constructor.
-    ~CSoundManager(); ///< Destructor.
+    /// Default Constructor
+    CSoundManager() noexcept;
+    /// Default Destructor
+    ~CSoundManager();
 
-    bool InitSounds(void);
 /**
-  *  @retval -1 on error
-  */
-    int  LoadAndCreateInstance(const wchar_t* szFilename);
-    bool IsAudioDevicePresent (void) const;
+ *  Initialize and allocates sound file resources
+ *
+ *  @retval true    on success
+ *  @retval false   on error
+ */
+    bool InitSounds(void) noexcept;
+/**
+ *  @param [in] szWaveFilename   wav file name
+ *
+ *  @retval int  containing valid index
+ *  @retval -1   on error
+ */
+    int  LoadAndCreateInstance(const wchar_t* szWaveFileName) noexcept;
 
-    bool Update(void);
+/**
+ *  @retval true   if the audio graph is operating normally
+ *  @retval false  if in 'silent mode'
+ */
+    bool IsAudioDevicePresent (void) const noexcept;
 
-    int  Play(int index); ///< Play a sound.
-    int  Loop(int index); ///< Play a sound looped.
-    void Stop(int index); ///< Stop a sound.
+/**
+ *  Performs per-frame processing for the audio engine
+ *
+ *  @retval true   on success
+ *  @retval false  if in 'silent mode'
+ */
+    bool Update(void) noexcept;
 
-    void SetPitch (float p, int instance = -1, int index = -1); ///< Set sound SetPitch.
-    void SetVolume(float v, int instance = -1, int index = -1); ///< Set sound SetVolume.
-}; //CSoundManager
+/**
+ *  Play a sound
+ *
+ *  @retval int   containing instance played
+ *  @retval -1    on error
+ */
+    int  Play(int iIndex) noexcept;
+    int  Loop(int iIndex) noexcept; ///< Play a sound looped.
+    void Stop(int iIndex) noexcept; ///< Stop a sound.
+
+/**
+ *  Sets a pitch-shift factor. 
+ * 
+ *  @param [in] fPitch       Ranges from -1 to +1, playback defaults to 0 (which is no pitch-shifting).
+ *  @param [in] iInstance
+ *  @param [in] iIndex
+ *
+ *  This will trigger a C++ exception if the object was created with SoundEffectInstance_NoSetPitch
+ */
+    void SetPitch (float fPitch, int iInstance = -1, int iIndex = -1);
+/**
+ *  Sets playback volume. Playback defaults to 1
+ */
+    void SetVolume(float fVolume, int iInstance = -1, int iIndex = -1);
+};
 
 #endif

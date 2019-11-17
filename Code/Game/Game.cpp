@@ -25,19 +25,19 @@
 // the following are helper methods and
 // are kind of hacky relying on dynamic_cast
 
-bool IsShip(eng::CActor2* pActor)
+bool IsShip(eng::CActor2* pActor) noexcept
 {
     CShip* pShip = dynamic_cast<CShip*>(pActor);
     return (pShip != nullptr);
 };
 
-bool IsProjectile(eng::CActor2* pActor)
+bool IsProjectile(eng::CActor2* pActor) noexcept
 {
     CProjectile* pProj = dynamic_cast<CProjectile*>(pActor);
     return (pProj != nullptr);
 };
 
-bool IsAsteroid(eng::CActor2* pActor)
+bool IsAsteroid(eng::CActor2* pActor) noexcept
 {
     CAsteroid* pAst = dynamic_cast<CAsteroid*>(pActor);
     return (pAst != nullptr);
@@ -45,7 +45,7 @@ bool IsAsteroid(eng::CActor2* pActor)
 
 
 //-----------------------------------------------------------------------------------------------
-CGame::CGame( CSoundManager* pSoundManager ) noexcept
+CGame::CGame( CSoundManager* pSoundManager )
     : m_pShip(nullptr),
       m_pSoundManager(pSoundManager),
       m_nAsteroidWaveSize(INITIAL_ASTEROIDS),
@@ -244,7 +244,7 @@ void CGame::InitActors( void )
 }
 
 //-----------------------------------------------------------------------------------------------
-bool CGame::IsShipActive (void) const
+bool CGame::IsShipActive (void) const noexcept
 {
     auto pShip = get_Ship ();
     return (pShip && pShip->IsActive ());

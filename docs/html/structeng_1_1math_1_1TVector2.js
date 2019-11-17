@@ -4,6 +4,7 @@ var structeng_1_1math_1_1TVector2 =
     [ "TVector2", "structeng_1_1math_1_1TVector2.html#ab14c91cd948421b3285ffafaf5eced05", null ],
     [ "TVector2", "structeng_1_1math_1_1TVector2.html#a9fe62224782598239138458551ad2f13", null ],
     [ "TVector2", "structeng_1_1math_1_1TVector2.html#a5a2397a20854cb38ddae67387b734954", null ],
+    [ "TVector2", "structeng_1_1math_1_1TVector2.html#a078248d7f2740647bc0c2dacf547b68e", null ],
     [ "~TVector2", "structeng_1_1math_1_1TVector2.html#a2c4eeb148ec95406928756d8f5c9fe9e", null ],
     [ "operator=", "structeng_1_1math_1_1TVector2.html#a414cfb33f94f36d8400327d49fdf1762", null ],
     [ "Init", "structeng_1_1math_1_1TVector2.html#af3fb7223d66194d45d488273942d2581", null ],

@@ -89,40 +89,39 @@ $(document).ready(function(){initNavTree('SoundManager_8h_source.html','');});
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classCSoundManager.html#a3d7bd70de82bc05fb09cf1627e6d05ec">   37</a></span>&#160;    AudioEngine*              <a class="code" href="classCSoundManager.html#a3d7bd70de82bc05fb09cf1627e6d05ec" title="XAudio 2.8 Engine wrapped up in DirectXTK.">m_pAudioEngine</a>; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classCSoundManager.html#a6dc5405ed308f19e18e9d81de35d1234">   38</a></span>&#160;    std::vector&lt;SoundEffect*&gt; <a class="code" href="classCSoundManager.html#a6dc5405ed308f19e18e9d81de35d1234" title="A list of sound effect.">m_pSoundEffects</a>; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classCSoundManager.html#a6c9c6a69c248c916b9fa08c20dbdf932">   39</a></span>&#160;    SoundEffectInstance**     m_pInstance[k_nMaxSounds]; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classCSoundManager.html#a9a8d86cc19d3fe9a1c8ad287e6d49229">   38</a></span>&#160;    std::vector&lt;SoundEffect*&gt; <a class="code" href="classCSoundManager.html#a9a8d86cc19d3fe9a1c8ad287e6d49229" title="A list of sound effect.">m_rgSoundEffects</a>; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classCSoundManager.html#a91e130de7913557722e1b6adfe80be5e">   39</a></span>&#160;    SoundEffectInstance**     m_rgInstances[k_nMaxSounds]; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classCSoundManager.html#a0d7a903615804bcc89ac3640893eb63d">   41</a></span>&#160;    <span class="keywordtype">int</span> m_rgInstanceCount[k_nMaxSounds]; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classCSoundManager.html#aba40f47e2331de9e7f65eb3ce512bf49">   43</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCSoundManager.html#aba40f47e2331de9e7f65eb3ce512bf49" title="Number of sounds loaded.">m_nCount</a>;              </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classCSoundManager.html#a8dfc664580b7427cf36531081428db41">   44</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCSoundManager.html#a8dfc664580b7427cf36531081428db41" title="Maximum number of sounds allowed.">m_nMaxSounds</a>;          </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classCSoundManager.html#ac9e33e4591af6c379014b377c4342ce8">   45</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCSoundManager.html#ac9e33e4591af6c379014b377c4342ce8" title="Last sound played.">m_nLastPlayedSound</a>;    </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classCSoundManager.html#aeba9925dcd84fa0357a32c4d79a7ab82">   46</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCSoundManager.html#aeba9925dcd84fa0357a32c4d79a7ab82" title="Instance of the last sound played.">m_nLastPlayedInstance</a>; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> CreateInstances(<span class="keywordtype">int</span> iIndex, <span class="keywordtype">int</span> n, SOUND_EFFECT_INSTANCE_FLAGS flags); </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span>  Load(<span class="keyword">const</span> <span class="keywordtype">wchar_t</span>* szFilename); </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">int</span>  GetNextInstance(<span class="keywordtype">int</span> iIndex);     </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classCSoundManager.html" title="The sound manager.">CSoundManager</a>();  </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ~<a class="code" href="classCSoundManager.html" title="The sound manager.">CSoundManager</a>(); </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> InitSounds(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">int</span>  LoadAndCreateInstance(<span class="keyword">const</span> <span class="keywordtype">wchar_t</span>* szFilename);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> IsAudioDevicePresent (<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> Update(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span>  Play(<span class="keywordtype">int</span> index); </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span>  Loop(<span class="keywordtype">int</span> index); </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> Stop(<span class="keywordtype">int</span> index); </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> SetPitch (<span class="keywordtype">float</span> p, <span class="keywordtype">int</span> instance = -1, <span class="keywordtype">int</span> index = -1); </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> SetVolume(<span class="keywordtype">float</span> v, <span class="keywordtype">int</span> instance = -1, <span class="keywordtype">int</span> index = -1); </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}; <span class="comment">//CSoundManager</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classCSoundManager.html#ac9e33e4591af6c379014b377c4342ce8">   44</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCSoundManager.html#ac9e33e4591af6c379014b377c4342ce8" title="Last sound played.">m_nLastPlayedSound</a>;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classCSoundManager.html#aeba9925dcd84fa0357a32c4d79a7ab82">   45</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCSoundManager.html#aeba9925dcd84fa0357a32c4d79a7ab82" title="Instance of the last sound played.">m_nLastPlayedInstance</a>; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> CreateInstances(<span class="keywordtype">int</span> iIndex, <span class="keywordtype">int</span> nNumInstances, SOUND_EFFECT_INSTANCE_FLAGS flags) noexcept;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span>  Load(<span class="keyword">const</span> <span class="keywordtype">wchar_t</span>* szWaveFileName) noexcept;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span>  GetNextInstance(<span class="keywordtype">int</span> iIndex) noexcept;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classCSoundManager.html" title="The sound manager.">CSoundManager</a>() noexcept;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ~<a class="code" href="classCSoundManager.html" title="The sound manager.">CSoundManager</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> InitSounds(<span class="keywordtype">void</span>) noexcept;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span>  LoadAndCreateInstance(const <span class="keywordtype">wchar_t</span>* szWaveFileName) noexcept;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> IsAudioDevicePresent (<span class="keywordtype">void</span>) const noexcept;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">bool</span> Update(<span class="keywordtype">void</span>) noexcept;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span>  Play(<span class="keywordtype">int</span> iIndex) noexcept;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span>  Loop(<span class="keywordtype">int</span> iIndex) noexcept; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> Stop(<span class="keywordtype">int</span> iIndex) noexcept; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> SetPitch (<span class="keywordtype">float</span> fPitch, <span class="keywordtype">int</span> iInstance = -1, <span class="keywordtype">int</span> iIndex = -1);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> SetVolume(<span class="keywordtype">float</span> fVolume, <span class="keywordtype">int</span> iInstance = -1, <span class="keywordtype">int</span> iIndex = -1);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

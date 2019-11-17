@@ -5,6 +5,7 @@ var CommonDef_8h =
     [ "WORLD_COORDS", "CommonDef_8h.html#affe8ae6d6458e14e985d51947eeccab6", null ],
     [ "DEGREES", "CommonDef_8h.html#a1a729749c0b4ad2ae35ea1dbfe0726fd", null ],
     [ "RADIANS", "CommonDef_8h.html#aacd32ca99f7c701d2546a679e407c106", null ],
+    [ "MAX_CONTROLLERS", "CommonDef_8h.html#aa6f568ffde5dffc4dcf6c384a5a216fd", null ],
     [ "WINDOW_PHYSICAL_WIDTH", "CommonDef_8h.html#acc60a7072d5724e33e7656cb9edde887", null ],
     [ "WINDOW_PHYSICAL_HEIGHT", "CommonDef_8h.html#a9d947f9290244a9fb0b60e7cb44b08e9", null ],
     [ "OFFSET_FROM_WINDOWS_DESKTOP", "CommonDef_8h.html#a153e916ff725af73cd70b3bf7d5e8cca", null ],

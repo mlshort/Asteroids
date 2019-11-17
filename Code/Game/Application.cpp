@@ -40,20 +40,6 @@ TCHAR            g_szModulePath[MAX_PATH] = {0};
 
 
 //-----------------------------------------------------------------------------------------------
-CApplication::CApplication() noexcept
-    : m_pGame         (nullptr),
-      m_pSoundManager (nullptr),
-      m_Keyboard      (),
-      m_hInstance     (nullptr),
-      m_hMainWnd      (nullptr),
-      m_hdcDisplay    (nullptr),
-      m_pszAppName    (_T("Asteroids")),
-      m_iMainWinWidth ( WINDOW_PHYSICAL_WIDTH ),
-      m_iMainWinHeight( WINDOW_PHYSICAL_HEIGHT )
-{
-};
-
-//-----------------------------------------------------------------------------------------------
 CApplication::~CApplication()
 {
     if (m_pGame)
@@ -64,7 +50,7 @@ CApplication::~CApplication()
 };
 
 //-----------------------------------------------------------------------------------------------
-void CApplication::RegisterWndClass (void )
+void CApplication::RegisterWndClass (void ) noexcept
 {
     // Define a window class
     WNDCLASSEX wndClassEx;
@@ -73,14 +59,14 @@ void CApplication::RegisterWndClass (void )
     wndClassEx.style         = CS_OWNDC; // Redraw on move, request own Display Context
     wndClassEx.lpfnWndProc   = static_cast< WNDPROC >(CApplication::MainWndProc); // Assign a win32 message-handling function
     wndClassEx.hInstance     = m_hInstance;
-    wndClassEx.hIcon         = NULL;
-    wndClassEx.hCursor       = NULL;
+    wndClassEx.hIcon         = nullptr;
+    wndClassEx.hCursor       = nullptr;
     wndClassEx.lpszClassName = g_szClassName;
     ::RegisterClassEx( &wndClassEx );
 };
 
 //-----------------------------------------------------------------------------------------------
-void CApplication::CreateOpenGLWindow( void )
+void CApplication::CreateOpenGLWindow( void ) noexcept
 {
     RegisterWndClass();
 
@@ -106,10 +92,10 @@ void CApplication::CreateOpenGLWindow( void )
                                    windowRect.top,
                                    windowRect.right - windowRect.left,
                                    windowRect.bottom - windowRect.top,
-                                   NULL,
-                                   NULL,
+                                   nullptr,
+                                   nullptr,
                                    m_hInstance,
-                                   NULL );
+                                   nullptr );
 
     ::ShowWindow( m_hMainWnd, SW_SHOW );
     ::SetForegroundWindow( m_hMainWnd );
@@ -117,7 +103,7 @@ void CApplication::CreateOpenGLWindow( void )
 
     m_hdcDisplay = ::GetDC( m_hMainWnd );
 
-    HCURSOR cursor = ::LoadCursor( NULL, IDC_ARROW );
+    HCURSOR cursor = ::LoadCursor( nullptr, IDC_ARROW );
     ::SetCursor( cursor );
 
     PIXELFORMATDESCRIPTOR pfd;
@@ -177,7 +163,7 @@ void CApplication::Initialize( HINSTANCE hInstance )
 };
 
 //-----------------------------------------------------------------------------------------------
-void CApplication::Shutdown( void )
+void CApplication::Shutdown( void ) noexcept
 {
 };
 
@@ -240,7 +226,7 @@ void CApplication::Update ( float fDeltaTime )
     }
 }
 //-----------------------------------------------------------------------------------------------
-bool CApplication::PlaySound(int iIndex)
+bool CApplication::PlaySound(int iIndex) noexcept
 {
     bool bReturn = false;
 
@@ -252,7 +238,7 @@ bool CApplication::PlaySound(int iIndex)
     return bReturn;
 };
 //-----------------------------------------------------------------------------------------------
-bool CApplication::StopSound(int iIndex)
+bool CApplication::StopSound(int iIndex) noexcept
 {
     bool bReturn = false;
 

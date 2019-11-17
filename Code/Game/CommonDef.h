@@ -22,15 +22,16 @@ typedef eng::math::CVector2i WORLD_COORDS;
 typedef float                DEGREES;
 typedef float                RADIANS;
 
-constexpr int WINDOW_PHYSICAL_WIDTH  = 1600;
-constexpr int WINDOW_PHYSICAL_HEIGHT = 900;
+constexpr size_t MAX_CONTROLLERS = 4;  // XInput handles up to 4 controllers
+
+constexpr int    WINDOW_PHYSICAL_WIDTH = 1600;
+constexpr int    WINDOW_PHYSICAL_HEIGHT = 900;
 
 constexpr int   OFFSET_FROM_WINDOWS_DESKTOP = 50;
 constexpr float VIEW_LEFT   = 0.0;
 constexpr float VIEW_RIGHT  = 1600.0;
 constexpr float VIEW_BOTTOM = 0.0;
 constexpr float VIEW_TOP    = VIEW_RIGHT * static_cast< float >(WINDOW_PHYSICAL_HEIGHT) / static_cast< float >(WINDOW_PHYSICAL_WIDTH);
-
 
 constexpr size_t MAX_ACTORS             = 512;
 constexpr size_t ASTEROID_VERTICES      = 12;

@@ -26,12 +26,7 @@ const eng::ColorRGBA k_clrShipDefault = eng::RGBA_CYAN;
 
 
 //-----------------------------------------------------------------------------------------------
-CShip::~CShip()
-{
-};
-
-//-----------------------------------------------------------------------------------------------
-void CShip::Render(void) const
+void CShip::Render(void) const noexcept
 {
     eng::g_theRdr.SetLineWidth( k_fShipLineWidth );
     eng::g_theRdr.SetColor( k_clrShipDefault );
@@ -70,7 +65,7 @@ void CShip::Render(void) const
 };
 
 //-----------------------------------------------------------------------------------------------
-void CShip::Update(float fDeltaTime)
+void CShip::Update(float fDeltaTime) noexcept
 {
     const KeyboardState& kbState = g_theApp.GetKeyboardState();
     bool bThrusting = false;
@@ -123,8 +118,8 @@ void CShip::Move( float fDeltaTime ) noexcept
 //-----------------------------------------------------------------------------------------------
 void CShip::Turn( float fDeltaTime ) noexcept
 {
-    float fLX = g_theApp.GetController_ThumbLX();
-    float fLY = g_theApp.GetController_ThumbLY();
+    const float fLX = g_theApp.GetController_ThumbLX();
+    const float fLY = g_theApp.GetController_ThumbLY();
 
     if (fLX || fLY)
     {

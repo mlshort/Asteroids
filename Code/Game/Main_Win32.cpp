@@ -40,7 +40,7 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE, LPSTR /*commandLineString*/,
     for (;;)
     {
         // Check to see if any messages are waiting in the queue
-        while (::PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+        while (::PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
             // translate keystroke messages into the right format
             ::TranslateMessage(&msg);

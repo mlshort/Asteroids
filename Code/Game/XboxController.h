@@ -27,13 +27,13 @@ public:
     XINPUT_STATE m_stLast;
     bool         m_bConnected;
 
-    explicit CXboxController(DWORD dwController = 0, 
-                             WORD wLeftThumbDZ  = XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE, 
-                             WORD wRightThumbDZ = XINPUT_GAMEPAD_RIGHT_THUMB_DEADZONE) noexcept;
+    constexpr explicit CXboxController(DWORD dwController = 0, 
+                                       WORD wLeftThumbDZ  = XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE, 
+                                       WORD wRightThumbDZ = XINPUT_GAMEPAD_RIGHT_THUMB_DEADZONE) noexcept;
     /// Default destructor
     ~CXboxController() noexcept;
 
-    bool  UpdateControllerState(void);
+    bool  UpdateControllerState(void) noexcept;
     
     bool  IsThumbL_Pressed     (void) const noexcept;
 
@@ -112,8 +112,21 @@ public:
 
     constexpr SHORT get_ThumbRY(void) const noexcept
     { return m_stInput.Gamepad.sThumbRY; };
-
-
 };
+
+constexpr CXboxController::CXboxController(DWORD dwController /* = 0 */,
+    WORD wLeftThumbDZ,
+    WORD wRightThumbDZ) noexcept
+    : m_dwController(dwController),
+      m_dwResult(0),
+      m_wLeftThumbDeadZone(wLeftThumbDZ),
+      m_wRightThumbDeadZone(wRightThumbDZ),
+      m_bConnected(false),
+      m_stInput{ 0 },
+      m_stLast{ 0 }
+{
+    //    memset(&m_stInput, 0, sizeof(m_stInput));
+    //    memset(&m_stLast, 0, sizeof(m_stLast));
+}
 
 #endif

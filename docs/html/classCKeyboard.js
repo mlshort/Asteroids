@@ -1,7 +1,7 @@
 var classCKeyboard =
 [
     [ "CStateTracker", "classCKeyboard_1_1CStateTracker.html", "classCKeyboard_1_1CStateTracker" ],
-    [ "CKeyboard", "classCKeyboard.html#a9a56ab3ad344f13de769844f74da5170", null ],
+    [ "CKeyboard", "classCKeyboard.html#a682bcb98306127b78d7dbba9ac612a64", null ],
     [ "~CKeyboard", "classCKeyboard.html#a4dfd363fbf1cc39f6c92af46685ac57e", null ],
     [ "CKeyboard", "classCKeyboard.html#a62291c257e793c08ae8d3d438ec84e4a", null ],
     [ "GetState", "classCKeyboard.html#a71b8bb9fd770aaad44db524efea5ca31", null ],

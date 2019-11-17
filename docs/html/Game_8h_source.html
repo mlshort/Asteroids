@@ -99,14 +99,14 @@ $(document).ready(function(){initNavTree('Game_8h_source.html','');});
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt;eng::CActor2*&gt;       m_rgActors;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classCGame.html#a8f9907ca801172abfcd344f2ffebc869" title="Default constructor.">CGame</a>( <a class="code" href="classCSoundManager.html" title="The sound manager.">CSoundManager</a>* pSndManager ) noexcept;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classCGame.html#afdf2cb7a0bef679e6a3d7dabedb6cd19" title="Initialization constructor.">CGame</a>( <a class="code" href="classCSoundManager.html" title="The sound manager.">CSoundManager</a>* pSndManager );</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classCGame.html#a83b0c9a26683d7a6960f3b7230563315" title="Default destructor.">~CGame</a>() noexcept;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> Render                 ( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> Update                 ( <span class="keywordtype">float</span> fDeltaTime );</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> InitActors             ( <span class="keywordtype">void</span> );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> IsShipActive           ( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> IsShipActive           ( <span class="keywordtype">void</span> ) <span class="keyword">const</span> noexcept;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> SpawnShip              ( <span class="keywordtype">void</span> );</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> SpawnAsteroidWave      ( <span class="keywordtype">void</span> );</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> SpawnLargeAsteroid     ( <span class="keywordtype">void</span> );</div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('Game_8h_source.html','');});
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    constexpr <span class="keyword">const</span> <a class="code" href="classCShip.html">CShip</a>*  get_Ship  ( <span class="keywordtype">void</span> ) <span class="keyword">const</span> noexcept;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classCGame.html#a8f9907ca801172abfcd344f2ffebc869" title="Default constructor.">CGame</a>( <span class="keyword">const</span> <a class="code" href="classCGame.html">CGame</a>&amp; ) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classCGame.html#afdf2cb7a0bef679e6a3d7dabedb6cd19" title="Initialization constructor.">CGame</a>( <span class="keyword">const</span> <a class="code" href="classCGame.html">CGame</a>&amp; ) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classCGame.html">CGame</a>&amp; <a class="code" href="classCGame.html#a929d43b5f14a1ad2482dbc8e8f98a8fd" title="Assignment operator.">operator = </a>( <span class="keyword">const</span> <a class="code" href="classCGame.html">CGame</a>&amp; ) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
