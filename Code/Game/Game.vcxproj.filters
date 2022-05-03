@@ -101,5 +101,6 @@
     <None Include="Resources\Asteroids.rc2">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

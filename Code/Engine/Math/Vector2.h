@@ -41,7 +41,7 @@ namespace math
 /**
  * @brief Provides basic 2-dimensional vector operations.
  *
- * @sa https://en.wikipedia.org/wiki/Two-dimensional_space
+ * @sa https://en.wikipedia.org/wiki/Euclidean_vector
  */
 template <class _Ty>
 struct TVector2
@@ -135,6 +135,8 @@ struct TVector2
     template <class _TScalar>
     constexpr TVector2<_Ty> operator - ( _TScalar kScalar ) const noexcept
     {
+        static_assert(std::is_scalar<_TScalar>::value,
+                      "template argument != scalar for TVector2::operator -");
         return TVector2<_Ty>( X - kScalar, Y - kScalar );
     };
 
@@ -149,6 +151,8 @@ struct TVector2
     template <class _TScalar>
     constexpr TVector2<_Ty> operator + ( _TScalar kScalar ) const noexcept
     {
+        static_assert(std::is_scalar<_TScalar>::value,
+                      "template argument != scalar for TVector2::operator +");
         return TVector2<_Ty>( X + kScalar, Y + kScalar );
     };
 
@@ -175,7 +179,7 @@ struct TVector2
     constexpr TVector2<_Ty> operator * ( _TScalar kScalar ) const noexcept
     {
         static_assert(std::is_scalar<_TScalar>::value,
-                      "invalid scalar type for TVector2");
+                      "template argument != scalar for TVector2::operator *");
         return TVector2<_Ty>( static_cast<_Ty>(X * kScalar), static_cast<_Ty>(Y * kScalar) );
     };
 
@@ -234,13 +238,16 @@ struct TVector2
  * @param [in] kScalar      scalar divisor
  *
  * @retval TVector2<_Ty>&   reference to this resultant vector
+ *
+ *                          if scalar is 0, resultant vector contains
+ *                          original components unmodified.
  */
     template <class _TScalar>
     inline TVector2<_Ty>& operator / ( _TScalar kScalar ) noexcept
     {
         static_assert(std::is_scalar<_TScalar>::value,
-                      "template argument != scalar for TVector2");
-        kScalar = (kScalar == _TScalar()) ? 1 : kScalar;
+                      "template argument != scalar for TVector2::operator /");
+        kScalar = (kScalar == _TScalar()) ? 1 : kScalar; // don't allow divide by 0
         X /= kScalar;
         Y /= kScalar;
 
@@ -257,6 +264,8 @@ struct TVector2
     template <class _TScalar>
     inline TVector2<_Ty>& operator *= ( _TScalar kScalar ) noexcept
     {
+        static_assert(std::is_scalar<_TScalar>::value,
+                      "template argument != scalar for TVector2::operator *=");
         X *= kScalar;
         Y *= kScalar;
 
@@ -274,6 +283,8 @@ struct TVector2
     template<class _TScalar>
     inline TVector2<_Ty>& operator += ( _TScalar kScalar ) noexcept
     {
+        static_assert(std::is_scalar<_TScalar>::value,
+                      "template argument != scalar for TVector2::operator +=");
         X += kScalar;
         Y += kScalar;
 
@@ -291,6 +302,8 @@ struct TVector2
     template<class _TScalar>
     inline TVector2<_Ty>& operator -= ( _TScalar kScalar ) noexcept
     {
+        static_assert(std::is_scalar<_TScalar>::value,
+                      "template argument != scalar for TVector2::operator -=");
         X -= kScalar;
         Y -= kScalar;
 
@@ -421,10 +434,13 @@ struct TVector2
  *
  * @retval TVector2<_Ty>    a vector whose components are the reciprocal of the corresponding
  *                          component of this vector
+ *
+ *                          if a component is 0, component is not changed
  */
     constexpr TVector2<_Ty> Reciprocal(void) const noexcept
     {
-        TVector2<_Ty> vResult( X ? _Ty(1.0) / X : _Ty(), Y ? _Ty(1.0) / Y : _Ty() );
+        TVector2<_Ty> vResult( X ? _Ty(1.0) / X : _Ty(),   // don't allow divide by 0
+                               Y ? _Ty(1.0) / Y : _Ty() ); // don't allow divide by 0
 
         return vResult;
     };

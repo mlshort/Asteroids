@@ -364,6 +364,10 @@ LRESULT CALLBACK CApplication::MainWndProc( HWND hWnd, UINT uMsg, WPARAM wParam,
         }
         break;
 
+        case WM_CLOSE:
+            DestroyWindow(hWnd);
+            break;
+
         case WM_SIZE:
             g_theApp.m_iMainWinWidth = (int) LOWORD(lParam);
             g_theApp.m_iMainWinHeight = (int) HIWORD(lParam);
@@ -375,9 +379,12 @@ LRESULT CALLBACK CApplication::MainWndProc( HWND hWnd, UINT uMsg, WPARAM wParam,
         case WM_KEYUP:
             g_theApp.ProcessKeyboardMsg(uMsg, wParam, lParam);
             break;
+
+        default:
+            return ::DefWindowProc(hWnd, uMsg, wParam, lParam);
         }
 
-    return ::DefWindowProc( hWnd, uMsg, wParam, lParam );
+    return 0;
 }
 
 //-----------------------------------------------------------------------------------------------

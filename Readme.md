@@ -42,12 +42,6 @@ Directory Structure
         |
         +-- Third Party
             |
-            +-- DirectX
-            |   |
-            |   +-- Lib
-            |       |
-            |       +-- x86 (DirectX, DirectSound, DirectInput, etc)
-            |
             +-- stbi (Solution File) (Project File) (stbi Source Code)
 
 [Doxygen Generated Project Documentation](https://mlshort.github.io/Asteroids/)
@@ -56,8 +50,6 @@ Directory Structure
 Project Enhancements
 --------------------
 1. Source Code Repository (Visual Studio Team Services)
-    * https://ualr-projects.visualstudio.com/Grad%20School%20Projects/_versionControl
-    * https://ualr-projects.visualstudio.com/Grad%20School%20Projects/_versionControl#path=%24%2FGrad%20School%20Projects%2FAsteroids&version=T&_a=contents
 
 2. Windows Unicode Compliant
 
